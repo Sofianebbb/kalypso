@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+p {
+  max-width: 65ch;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- GRILLE ASYMÉTRIQUE BAUHAUS --- */
+.grid {
+  display: grid;
+  gap: var(--gap);
+}
+
+.grid--2 {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--asym {
+  grid-template-columns: 2fr 1fr 1.2fr;
+}
+
+@media (max-width: 768px) {
+  .grid--2,
+  .grid--3,
+  .grid--4,
+  .grid--asym {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- SECTIONS --- */
+.section {
+  padding: var(--section-pad);
+  position: relative;
+}
+
+.section + .section {
+  border-top: var(--border);
+}
+
+/* --- TAG DE SECTION --- */
+.section__tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* --- NUMÉROTATION DE SECTION --- */
+.section__number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 4rem;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.1em 0.3em;
+  margin-bottom: 1rem;
+}
+
+/* --- LAYOUT UTILITAIRES --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap);
+}
+
+.flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* --- HEADER --- */
+.header {
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  border-bottom: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--paper);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header__logo svg {
+  width: 48px;
+  height: 48px;
+}
+
+.header__title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.header__nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* --- FOOTER --- */
+.footer {
+  border-top: var(--border);
+  padding: 2rem clamp(1rem, 3vw, 2rem);
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --- FIL ROUGE CHAPITRE --- */
+.chapter-nav {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chapter-nav__item {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-left: 4px solid transparent;
+  color: var(--ink);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.chapter-nav__item.active {
+  opacity: 1;
+  border-left-color: var(--yellow);
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .chapter-nav {
+    display: none;
+  }
+}
+
+/* --- VISUALLY HIDDEN --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalipso Trio — Le Badamier</title>
+  <meta name="description" content="2 à 3 habitations · 1 vision · ~80 k€ par foyer. Projet pilote habitat La Réunion 2026.">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/motion.css">
+  <link rel="stylesheet" href="styles/print.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* --- FOND CARTE SVG --- */
+    .hub-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      background: #1B8F86;
+    }
+
+    .hub-bg__map {
+      position: absolute;
+      inset: -10%;
+      width: 120%;
+      height: 120%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hub-bg__map svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hub-bg__vignette {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      box-shadow: inset 0 0 250px 100px rgba(27,42,78,0.55);
+      pointer-events: none;
+    }
+
+    /* --- CONTENU PRINCIPAL --- */
+    .hub {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: #fff;
+    }
+
+    .hub__logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.4));
+      opacity: 0;
+    }
+
+    .hub__title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+      color: #fff;
+      text-shadow: 2px 3px 0 rgba(0,0,0,0.25);
+      opacity: 0;
+    }
+
+    .hub__subtitle {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      margin-bottom: 0.5rem;
+      color: rgba(255,255,255,0.92);
+      opacity: 0;
+    }
+
+    .hub__badge {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.4rem 1.2rem;
+      border: 2px solid rgba(255,255,255,0.5);
+      display: inline-block;
+      margin-bottom: 3rem;
+      color: rgba(255,255,255,0.8);
+      opacity: 0;
+    }
+
+    /* --- DROPDOWN STYLISÉ --- */
+    .hub__selector {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      opacity: 0;
+    }
+
+    .hub__select-label {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      display: block;
+    }
+
+    .hub__dropdown {
+      position: relative;
+    }
+
+    .hub__dropdown-toggle {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--ink);
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-align: left;
+    }
+
+    .hub__dropdown-toggle:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
+    }
+
+    .hub__dropdown-arrow {
+      font-size: 0.8rem;
+      transition: transform 0.3s;
+    }
+
+    .hub__dropdown.open .hub__dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    .hub__dropdown-menu {
+      position: absolute;
+      bottom: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background: var(--paper);
+      border: 3px solid var(--ink);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.5);
+      z-index: 20;
+      display: none;
+      overflow: hidden;
+    }
+
+    .hub__dropdown.open .hub__dropdown-menu {
+      display: block;
+    }
+
+    .hub__dropdown-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid var(--ink);
+      transition: background 0.15s, padding-left 0.2s;
+    }
+
+    .hub__dropdown-item:last-child {
+      border-bottom: none;
+    }
+
+    .hub__dropdown-item:hover {
+      background: var(--ink);
+      color: var(--paper);
+      padding-left: 2rem;
+    }
+
+    .hub__dropdown-item:hover .hub__item-dot {
+      background: var(--paper);
+    }
+
+    .hub__item-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid var(--ink);
+    }
+
+    .hub__dropdown-item:nth-child(1) .hub__item-dot { background: var(--yellow); }
+    .hub__dropdown-item:nth-child(2) .hub__item-dot { background: var(--navy); }
+    .hub__dropdown-item:nth-child(3) .hub__item-dot { background: var(--turquoise); }
+    .hub__dropdown-item:nth-child(4) .hub__item-dot { background: var(--pink); }
+
+    .hub__item-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hub__item-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .hub__item-desc {
+      font-size: 0.75rem;
+      font-weight: 400;
+      opacity: 0.6;
+      margin-top: 0.15rem;
+    }
+
+    .hub__footer {
+      position: absolute;
+      bottom: 1.5rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      opacity: 0;
+    }
+
+    .skip-intro {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border: 2px solid rgba(255,255,255,0.4);
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: opacity 0.2s;
+      z-index: 50;
+    }
+
+    .skip-intro:hover { color: #fff; border-color: #fff; }
+
+    @media print {
+      .hub-bg { display: none; }
+      .hub { color: var(--ink); height: auto; }
+      .hub__title { color: var(--ink); text-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- FOND — Carte illustrée La Réunion -->
+  <div class="hub-bg">
+    <div class="hub-bg__map">
+      <svg viewBox="0 0 900 750" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="waves" x="0" y="0" width="120" height="30" patternUnits="userSpaceOnUse">
+            <path d="M0,15 Q15,5 30,15 Q45,25 60,15 Q75,5 90,15 Q105,25 120,15" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5"/>
+          </pattern>
+          <pattern id="topo" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="15" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+            <circle cx="25" cy="25" r="6" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
+          </pattern>
+          <radialGradient id="volcGlow" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#E94B7C" stop-opacity="0.55"/>
+            <stop offset="50%" stop-color="#E94B7C" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#E94B7C" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="landShadow" x="-5%" y="-5%" width="115%" height="115%">
+            <feDropShadow dx="5" dy="7" stdDeviation="10" flood-color="rgba(0,0,0,0.35)"/>
+          </filter>
+          <!-- Tracé réel de La Réunion (GeoJSON département 974) -->
+          <path id="reunion" d="M 162,350 L 157,344 L 149,339 L 143,334 L 141,331 L 133,319 L 135,310 L 135,299 L 133,295 L 130,288 L 134,282 L 138,278 L 147,269 L 160,270 L 172,264 L 186,250 L 190,235 L 187,222 L 191,197 L 197,185 L 209,190 L 223,193 L 226,195 L 235,187 L 247,182 L 258,172 L 269,162 L 284,154 L 296,146 L 311,142 L 323,142 L 344,140 L 365,151 L 389,148 L 411,155 L 438,156 L 458,161 L 486,169 L 513,176 L 535,187 L 561,219 L 575,279 L 596,298 L 636,356 L 668,377 L 682,385 L 690,416 L 660,481 L 614,580 L 567,589 L 517,600 L 469,589 L 424,580 L 387,566 L 346,553 L 305,530 L 251,505 L 204,462 L 189,435 L 179,370 L 164,351 Z"/>
+        </defs>
+
+        <!-- OCÉAN -->
+        <rect width="900" height="750" fill="#1B8F86"/>
+        <rect width="900" height="750" fill="url(#waves)"/>
+
+        <!-- Cercles décoratifs océan -->
+        <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <circle cx="100" cy="100" r="65" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <circle cx="820" cy="640" r="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+        <circle cx="820" cy="640" r="80" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+        <circle cx="80" cy="620" r="30" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <circle cx="830" cy="120" r="35" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+        <!-- ÎLE — Tracé géographique réel -->
+        <g filter="url(#landShadow)">
+          <use href="#reunion" fill="#2D7A3A" stroke="#1B2A4E" stroke-width="3.5" stroke-linejoin="round"/>
+        </g>
+
+        <!-- Texture topo sur île -->
+        <clipPath id="islandClip">
+          <use href="#reunion"/>
+        </clipPath>
+        <rect width="900" height="750" fill="url(#topo)" clip-path="url(#islandClip)"/>
+
+        <!-- Relief — courbes de niveau -->
+        <g clip-path="url(#islandClip)" opacity="0.45">
+          <ellipse cx="350" cy="340" rx="140" ry="115" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+          <ellipse cx="355" cy="345" rx="95" ry="80" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1"/>
+          <ellipse cx="360" cy="348" rx="55" ry="45" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+          <!-- Piton des Neiges (centre) -->
+          <circle cx="341" cy="324" r="18" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+          <circle cx="341" cy="324" r="8" fill="rgba(255,255,255,0.05)"/>
+        </g>
+
+        <!-- ZONE VOLCAN — Piton de la Fournaise (SE) -->
+        <circle cx="576" cy="467" r="100" fill="url(#volcGlow)" clip-path="url(#islandClip)"/>
+        <g clip-path="url(#islandClip)">
+          <ellipse cx="590" cy="440" rx="70" ry="80" fill="#C43867" opacity="0.45" stroke="#E94B7C" stroke-width="1.5"/>
+          <circle cx="593" cy="435" r="38" fill="none" stroke="#E94B7C" stroke-width="2" opacity="0.5"/>
+          <circle cx="595" cy="432" r="22" fill="none" stroke="#E94B7C" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="597" cy="430" r="10" fill="#E94B7C" opacity="0.35"/>
+          <circle cx="597" cy="430" r="4" fill="#D2382C" opacity="0.5"/>
+        </g>
+
+        <!-- Côte décorative (tirets) -->
+        <use href="#reunion" fill="none" stroke="rgba(244,236,219,0.18)" stroke-width="7" stroke-dasharray="4 8" stroke-linejoin="round"/>
+
+        <!-- MARQUEUR — Le Badamier (côte Est) -->
+        <g class="hub-marker" transform="translate(621, 342)">
+          <circle r="12" fill="#F2C12E" stroke="#0E0E0E" stroke-width="2.5" opacity="0.95"/>
+          <circle r="4" fill="#0E0E0E"/>
+        </g>
+        <text x="621" y="367" text-anchor="middle" font-family="'DM Serif Display', Georgia, serif" font-size="12" font-weight="400" fill="#F4ECDB" letter-spacing="0.04em" opacity="0.85">Le Badamier</text>
+
+        <!-- Labels villes -->
+        <g font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="rgba(244,236,219,0.5)" letter-spacing="0.1em">
+          <text x="341" y="130" text-anchor="middle">SAINT-DENIS</text>
+          <text x="125" y="255" text-anchor="end">SAINT-PAUL</text>
+          <text x="368" y="618" text-anchor="middle">SAINT-PIERRE</text>
+        </g>
+
+        <!-- Rose des vents -->
+        <g transform="translate(100, 660)" opacity="0.3">
+          <circle r="20" fill="none" stroke="#F4ECDB" stroke-width="1.2"/>
+          <line x1="0" y1="-20" x2="0" y2="20" stroke="#F4ECDB" stroke-width="1"/>
+          <line x1="-20" y1="0" x2="20" y2="0" stroke="#F4ECDB" stroke-width="1"/>
+          <polygon points="0,-18 -3.5,-7 3.5,-7" fill="#F4ECDB"/>
+          <text x="0" y="-25" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#F4ECDB">N</text>
+        </g>
+
+        <!-- Légende -->
+        <g transform="translate(750, 665)" font-family="Inter, sans-serif" font-size="8.5" fill="rgba(244,236,219,0.45)">
+          <rect x="0" y="0" width="10" height="10" rx="2" fill="#2D7A3A" stroke="rgba(244,236,219,0.25)" stroke-width="0.8"/>
+          <text x="15" y="9">Terres</text>
+          <rect x="0" y="17" width="10" height="10" rx="2" fill="#C43867" stroke="rgba(244,236,219,0.25)" stroke-width="0.8"/>
+          <text x="15" y="26">Volcan</text>
+          <rect x="0" y="34" width="10" height="10" rx="2" fill="#1B8F86" stroke="rgba(244,236,219,0.25)" stroke-width="0.8"/>
+          <text x="15" y="43">Océan</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="hub-bg__vignette"></div>
+
+  <!-- CONTENU -->
+  <main class="hub">
+    <svg class="hub__logo kalipso-logo" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="58" fill="#F4ECDB" stroke="#0E0E0E" stroke-width="3"/>
+      <g class="logo-rings">
+        <circle cx="60" cy="60" r="46" fill="none" stroke="#1B2A4E" stroke-width="10"/>
+        <circle cx="60" cy="60" r="35" fill="none" stroke="#2BA39A" stroke-width="8"/>
+        <circle cx="60" cy="60" r="25" fill="none" stroke="#F2C12E" stroke-width="8"/>
+        <circle cx="60" cy="60" r="16" fill="none" stroke="#D2382C" stroke-width="6"/>
+      </g>
+      <circle cx="60" cy="60" r="8" fill="#0E0E0E"/>
+      <circle cx="56" cy="56" r="3" fill="#F4ECDB" opacity="0.6"/>
+    </svg>
+
+    <h1 class="hub__title">Kalipso Trio</h1>
+    <p class="hub__subtitle">2 à 3 habitations · 1 vision · ~80 k€ par foyer</p>
+    <span class="hub__badge">Le Badamier — La Réunion 2026</span>
+
+    <div class="hub__selector">
+      <span class="hub__select-label">Choisissez votre lecture</span>
+      <div class="hub__dropdown" id="hub-dropdown">
+        <button class="hub__dropdown-toggle" id="dropdown-toggle">
+          <span>Sélectionner une cible</span>
+          <span class="hub__dropdown-arrow">▼</span>
+        </button>
+        <div class="hub__dropdown-menu">
+          <a href="vues/coacquereurs.html" class="hub__dropdown-item">
+            <span class="hub__item-dot"></span>
+            <span class="hub__item-text">
+              <span class="hub__item-title">Co-acquéreurs</span>
+              <span class="hub__item-desc">Familles prêtes à bâtir ensemble</span>
+            </span>
+          </a>
+          <a href="vues/bailleurs.html" class="hub__dropdown-item">
+            <span class="hub__item-dot"></span>
+            <span class="hub__item-text">
+              <span class="hub__item-title">Bailleurs sociaux</span>
+              <span class="hub__item-desc">Un modèle pilote duplicable</span>
+            </span>
+          </a>
+          <a href="vues/politique.html" class="hub__dropdown-item">
+            <span class="hub__item-dot"></span>
+            <span class="hub__item-text">
+              <span class="hub__item-title">Collectivités & élus</span>
+              <span class="hub__item-desc">Politique publique reproductible</span>
+            </span>
+          </a>
+          <a href="vues/mecenat.html" class="hub__dropdown-item">
+            <span class="hub__item-dot"></span>
+            <span class="hub__item-text">
+              <span class="hub__item-title">Mécénat & RSE</span>
+              <span class="hub__item-desc">Démonstrateur à fort effet de levier</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="hub__footer">Porté par Sofiane Hakoury Behdad & Florent Clayes</p>
+  </main>
+
+  <button class="skip-intro" id="skip-intro" style="display:none;">Passer l'intro</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Dropdown
+      const dd = document.getElementById('hub-dropdown');
+      const toggle = document.getElementById('dropdown-toggle');
+      toggle.addEventListener('click', () => dd.classList.toggle('open'));
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) dd.classList.remove('open');
+      });
+
+      // Intro animation
+      const skipBtn = document.getElementById('skip-intro');
+      const alreadySeen = localStorage.getItem('kalipso-intro-seen');
+
+      function showAll() {
+        document.querySelectorAll('.hub__logo, .hub__title, .hub__subtitle, .hub__badge, .hub__selector, .hub__footer').forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+        skipBtn.style.display = 'none';
+      }
+
+      if (alreadySeen || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        showAll();
+        return;
+      }
+
+      skipBtn.style.display = 'block';
+      skipBtn.addEventListener('click', () => {
+        if (window.gsap) gsap.globalTimeline.clear();
+        showAll();
+        localStorage.setItem('kalipso-intro-seen', 'true');
+      });
+
+      function waitForGSAP(cb) {
+        if (window.gsap) { cb(); return; }
+        let attempts = 0;
+        const check = setInterval(() => {
+          attempts++;
+          if (window.gsap) { clearInterval(check); cb(); }
+          else if (attempts > 50) { clearInterval(check); showAll(); }
+        }, 100);
+      }
+
+      waitForGSAP(() => {
+        const tl = gsap.timeline({
+          onComplete: () => {
+            localStorage.setItem('kalipso-intro-seen', 'true');
+            skipBtn.style.display = 'none';
+          }
+        });
+
+        gsap.set('.hub__logo', { opacity: 0, scale: 0.6 });
+        gsap.set('.hub__title', { opacity: 0, y: 40 });
+        gsap.set('.hub__selector', { opacity: 0, y: 20 });
+
+        tl
+          .to('.hub__logo', { opacity: 1, scale: 1, duration: 1.0, ease: 'back.out(1.4)' })
+          .to('.logo-rings', { rotation: 360, duration: 1.5, ease: 'power2.inOut', transformOrigin: '50% 50%' }, '-=0.3')
+          .to('.hub__title', { opacity: 1, y: 0, duration: 1.0, ease: 'back.out(1.6)' }, '-=0.8')
+          .to('.hub__subtitle', { opacity: 1, duration: 0.4 }, '-=0.4')
+          .to('.hub__badge', { opacity: 1, duration: 0.4 }, '-=0.2')
+          .to('.hub__selector', { opacity: 1, y: 0, duration: 0.6, ease: 'back.out(1.6)' }, '-=0.1')
+          .to('.hub__footer', { opacity: 1, duration: 0.4 }, '-=0.2');
+      });
+    });
+  </script>
+</body>
+</html>

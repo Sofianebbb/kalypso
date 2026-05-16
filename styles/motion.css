@@ -1,0 +1,90 @@
+/* --- ANIMATIONS CSS NATIVES (fallback si GSAP indisponible) --- */
+
+.section--elevator {
+  will-change: transform, opacity;
+}
+
+.elevator-stack {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.elevator-stack > .section--elevator {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- CTA PULSE --- */
+@keyframes cta-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.btn--cta {
+  animation: cta-pulse 4s ease-in-out infinite;
+}
+
+/* --- LOGO SPIN ON HOVER --- */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.kalipso-logo:hover .logo-rings {
+  animation: logo-spin 8s linear infinite;
+}
+
+/* --- FADE ENTRÉE (fallback reduced-motion) --- */
+@keyframes fade-in-short {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- CHAPITRE NAV TICK --- */
+@keyframes nav-tick {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.chapter-nav__item.active {
+  animation: nav-tick 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- REDUCED MOTION --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.2s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+  }
+
+  .section--elevator {
+    will-change: auto;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .btn--cta {
+    animation: none;
+  }
+
+  .kalipso-logo:hover .logo-rings {
+    animation: none;
+  }
+}
+
+/* --- PRINT MODE (via body class ou @media print) --- */
+body.print-mode *,
+body.print-mode *::before,
+body.print-mode *::after {
+  animation: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}

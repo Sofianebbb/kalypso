@@ -1,0 +1,62 @@
+{
+  "quoi": {
+    "label": "QUOI",
+    "contenu": "Projet pilote habitat modulaire reproductible : 3 cases sur 1 terrain unique, propriété individuelle, mutualisation VRD.",
+    "variantes": {
+      "co": "Trois familles achètent ensemble un terrain, le divisent en trois parcelles titrées, et bâtissent chacune leur case. Coût réel : ~80 k€ par foyer.",
+      "bailleur": "Un prototype d'habitat intermédiaire groupé : 3 unités individuelles sur foncier mutualisé, sous plafond d'accession sociale, reproductible en dent creuse.",
+      "politique": "Un dispositif privé d'accession à la propriété par mutualisation foncière. Trois titres individuels, zéro artificialisation, densification douce.",
+      "mecene": "Un démonstrateur d'habitat accessible à fort impact social : 3 foyers propriétaires pour le prix d'un seul sur le marché classique."
+    }
+  },
+  "qui": {
+    "label": "QUI",
+    "contenu": "Initiative privée portée par Sofiane Hakoury Behdad & Florent Clayes. Cibles : familles éligibles, partenaires institutionnels, mécènes RSE.",
+    "variantes": {
+      "co": "Porté par Sofiane et Florent, deux Réunionnais convaincus que la propriété ne doit pas être un privilège. Vous êtes la troisième famille.",
+      "bailleur": "Sofiane Hakoury Behdad & Florent Clayes, porteurs privés. Recherchent un partenaire institutionnel pour sécuriser le foncier et valider la reproductibilité.",
+      "politique": "Initiative citoyenne portée par deux entrepreneurs locaux. Ambition : transformer un essai privé en programme public reproductible.",
+      "mecene": "Deux porteurs de projet réunionnais, Sofiane Hakoury Behdad et Florent Clayes, cherchent un mécène fondateur pour financer le premier démonstrateur."
+    }
+  },
+  "ou": {
+    "label": "OÙ",
+    "contenu": "La Réunion. Implantation prioritaire : dents creuses urbaines + hauts modérés. Commune pilote à arrêter.",
+    "variantes": {
+      "co": "La Réunion — là où vous vivez. Le terrain sera en dent creuse, en zone urbaine ou péri-urbaine, accessible et viabilisé.",
+      "bailleur": "La Réunion. Cible : dents creuses identifiées par l'EPF ou les SEM. Hauts modérés et zones urbaines denses à densifier.",
+      "politique": "La Réunion, département où le foncier est le plus tendu de France. Cible : les dents creuses que personne n'exploite.",
+      "mecene": "La Réunion — territoire ultramarin à forte tension foncière, idéal pour un démonstrateur à effet de levier maximal."
+    }
+  },
+  "quand": {
+    "label": "QUAND",
+    "contenu": "Édition 2026. Cycle de pré-réservation foncière Q1-Q2. Montage technique <3 mois. Livraison cible Q4 2026.",
+    "variantes": {
+      "co": "Lancement 2026. Identification du terrain au premier semestre, construction en 3 mois, emménagement avant la fin de l'année.",
+      "bailleur": "Édition pilote 2026. Pré-réservation foncière Q1-Q2, assemblage Q3, livraison Q4. Cycle court compatible avec les exercices budgétaires.",
+      "politique": "Pilote 2026. Assez tôt pour intégrer les résultats dans la révision des PLH 2027. Assez rapide pour démontrer avant les arbitrages budgétaires.",
+      "mecene": "Livraison 2026. Impact mesurable dès la première année. Rapport d'impact disponible Q1 2027."
+    }
+  },
+  "comment": {
+    "label": "COMMENT",
+    "contenu": "Achat groupé sans intermédiaire → bornage géomètre → 3 titres individuels → mutualisation VRD → assemblage steel framing RTAA DOM.",
+    "variantes": {
+      "co": "On achète le terrain ensemble, un géomètre le divise en trois lots, chacun reçoit son titre de propriété. Les VRD sont mutualisés, la construction est en steel framing — rapide, solide, tropicalisé.",
+      "bailleur": "Acquisition groupée directe, bornage en 3 lots individuels, titres fonciers distincts. VRD mutualisé. Construction steel framing RTAA DOM, assemblage sec <3 mois.",
+      "politique": "Suppression de la chaîne d'intermédiation classique. Achat direct, bornage, titrement individuel. Mutualisation des coûts d'infrastructure. Construction industrialisée conforme RTAA DOM.",
+      "mecene": "Le mécène finance l'amorçage (foncier + ingénierie). Le modèle s'auto-porte ensuite par les apports familiaux et les aides publiques stackables. Effet de levier : 1 € mécénat = 3 € de valeur habitat."
+    }
+  },
+  "pourquoi": {
+    "label": "POURQUOI",
+    "contenu": "Briser le cycle de la dette à 25 ans. Rendre la propriété accessible. Densifier sans artificialiser. Bâtir un modèle public reproductible.",
+    "variantes": {
+      "co": "Parce que 25 ans de crédit pour un appartement, c'est un piège. Parce que la propriété, c'est la liberté. Parce que vos enfants méritent un toit qui leur appartient.",
+      "bailleur": "Parce que le parc intermédiaire est le chaînon manquant de la politique habitat réunionnaise. Kalipso comble le trou entre le logement social et le marché libre.",
+      "politique": "Parce que la souveraineté territoriale commence par le toit. Parce qu'un département où la jeunesse ne peut pas se loger est un département qui se vide.",
+      "mecene": "Parce que l'impact social ne se mesure pas en rapports mais en familles logées. Kalipso offre un ratio coût/impact inégalé dans le secteur habitat."
+    }
+  }
+}
