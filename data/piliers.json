@@ -1,0 +1,70 @@
+{
+  "accessible": {
+    "label": "Accessible",
+    "icon": "🏠",
+    "color": "yellow",
+    "variantes": {
+      "co": "Devenir propriétaire à 3",
+      "bailleur": "Coût maîtrisé sous plafond",
+      "politique": "Anti-spéculation foncière",
+      "mecene": "Levier d'impact social"
+    },
+    "description": {
+      "co": "Trois familles s'unissent pour acheter un terrain unique, bornent trois parcelles distinctes et bâtissent chacune leur case. Le coût ? Divisé par trois sur le foncier, mutualisé sur les VRD. Résultat : un foyer propriétaire pour ~80 k€ là où le marché impose 250 k€.",
+      "bailleur": "Le modèle Kalipso positionne chaque unité sous les plafonds d'accession sociale. Pas de marge promoteur, pas d'intermédiaire spéculatif. Le coût brut est le coût final — compatible avec les grilles LBU, PTZ DOM et PSLA.",
+      "politique": "En supprimant la couche spéculative du foncier, Kalipso rend la propriété accessible sans subvention massive. Le terrain n'est plus une rente, il devient un outil d'aménagement au service de la cohésion sociale.",
+      "mecene": "Chaque euro investi dans Kalipso génère un effet de levier direct : un foyer sort de la dette locative, accède à la propriété et s'inscrit dans un cycle vertueux de transmission patrimoniale."
+    }
+  },
+  "durable": {
+    "label": "Durable",
+    "icon": "🌿",
+    "color": "turquoise",
+    "variantes": {
+      "co": "Construit pour vos enfants",
+      "bailleur": "RTAA DOM + steel framing",
+      "politique": "Résilience tropicale",
+      "mecene": "Démonstrateur écologique"
+    },
+    "description": {
+      "co": "Chaque case est conçue pour résister aux cyclones, à l'humidité et au temps. Structure steel framing certifiée RTAA DOM, ventilation naturelle traversante, toiture isolée. Une maison qui dure, sans entretien lourd.",
+      "bailleur": "Le système constructif steel framing répond aux exigences RTAA DOM : résistance cyclonique, parasismique, thermique. Assemblage sec en moins de 3 mois. Performance énergétique supérieure aux standards du parc existant.",
+      "politique": "Face au changement climatique, Kalipso propose un habitat intrinsèquement résilient. Pas de climatisation nécessaire, pas de fragilité structurelle. Un standard constructif qui devrait devenir la norme, pas l'exception.",
+      "mecene": "Kalipso est un démonstrateur écologique grandeur réelle : construction bas-carbone, zéro artificialisation nette (dents creuses), cycle de vie maîtrisé. Un cas d'usage mesurable pour tout rapport d'impact RSE."
+    }
+  },
+  "humain": {
+    "label": "Humain",
+    "icon": "🤝",
+    "color": "red",
+    "variantes": {
+      "co": "Une porte ouverte",
+      "bailleur": "Habitat intermédiaire inclusif",
+      "politique": "Lutte contre l'isolement",
+      "mecene": "Émancipation réelle"
+    },
+    "description": {
+      "co": "Kalipso, c'est trois foyers qui partagent un chemin, pas un mur. La case ouverte — avec sa terrasse commune — crée du lien sans imposer la promiscuité. Chacun chez soi, ensemble quand on veut.",
+      "bailleur": "Le projet cible l'habitat intermédiaire : des familles trop « riches » pour le social, trop « pauvres » pour le marché libre. Kalipso comble ce trou dans la raquette avec un modèle inclusif et non-stigmatisant.",
+      "politique": "L'isolement résidentiel est un facteur de précarité documenté. Kalipso y répond par la micro-communauté choisie : trois foyers reliés, solidaires, visibles. Un modèle de densification humaine contre l'atomisation sociale.",
+      "mecene": "Soutenir Kalipso, c'est financer l'émancipation concrète de familles qui n'auraient jamais accédé à la propriété. Pas un don, un investissement dans l'autonomie durable de foyers enracinés."
+    }
+  },
+  "perenne": {
+    "label": "Pérenne",
+    "icon": "🔗",
+    "color": "navy",
+    "variantes": {
+      "co": "Patrimoine transmissible",
+      "bailleur": "Modèle reproductible",
+      "politique": "Politique publique en germe",
+      "mecene": "Essaimage mesurable"
+    },
+    "description": {
+      "co": "Votre case est à vous. Titre de propriété individuel, terrain borné, bien transmissible. Pas de bail emphytéotique, pas de clause obscure. Un patrimoine réel que vous léguez à vos enfants.",
+      "bailleur": "Kalipso est conçu pour être dupliqué. Le modèle technique, juridique et financier est documenté, standardisé et reproductible sur toute parcelle en dent creuse. Un pilote fait pour devenir un programme.",
+      "politique": "Ce projet pilote est une proposition de politique publique. Si le modèle fonctionne — et il est calibré pour fonctionner — il peut être intégré dans les PLH, financé par les EPCI, déployé à l'échelle intercommunale.",
+      "mecene": "L'essaimage est le vrai indicateur d'impact. Kalipso documente chaque étape pour permettre la réplication. Un mécène ne finance pas une case : il finance un modèle qui en produira cent."
+    }
+  }
+}

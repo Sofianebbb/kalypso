@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalipso Trio — Co-acquéreurs</title>
+  <meta name="description" content="Sortir de la dette à 25 ans, devenir propriétaire à trois. Projet Kalipso Trio, La Réunion 2026.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/motion.css">
+  <link rel="stylesheet" href="../styles/print.css">
+</head>
+<body data-cible="co" data-mode="nominal">
+
+  <!-- HEADER FIXE -->
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="42" height="42">
+        <circle cx="60" cy="60" r="58" fill="#F4ECDB" stroke="#0E0E0E" stroke-width="3"/>
+        <g class="logo-rings"><circle cx="60" cy="60" r="46" fill="none" stroke="#1B2A4E" stroke-width="10"/><circle cx="60" cy="60" r="35" fill="none" stroke="#2BA39A" stroke-width="8"/><circle cx="60" cy="60" r="25" fill="none" stroke="#F2C12E" stroke-width="8"/><circle cx="60" cy="60" r="16" fill="none" stroke="#D2382C" stroke-width="6"/></g>
+        <circle cx="60" cy="60" r="8" fill="#0E0E0E"/>
+      </svg>
+      <span class="header__title">Kalipso Trio</span>
+    </a>
+    <nav class="header__nav">
+      <button class="btn btn-readmode" id="toggle-motion">Mode lecture</button>
+      <a class="btn btn-export" href="../assets/pdf/KalipsoTrio_coacquereurs.pdf" download style="position:static; box-shadow:var(--shadow); text-decoration:none;">PDF ↓</a>
+      <button class="burger" id="burger">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- BACKDROP -->
+  <div class="nav-panel__backdrop" id="nav-backdrop"></div>
+
+  <!-- MENU BURGER -->
+  <nav class="nav-panel" id="nav-panel">
+    <p class="nav-panel__title">Sections</p>
+    <a href="#" class="nav-panel__item active"><span class="nav-panel__num">01</span><span class="nav-panel__label">Accroche</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">02</span><span class="nav-panel__label">Le constat</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">03</span><span class="nav-panel__label">Les 4 piliers</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">04</span><span class="nav-panel__label">Ingénierie foncière</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">05</span><span class="nav-panel__label">Résilience technique</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">06</span><span class="nav-panel__label">Votre future case</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">07</span><span class="nav-panel__label">Cadre économique</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">08</span><span class="nav-panel__label">Rejoindre</span></a>
+  </nav>
+
+  <!-- FRAME FIXE — le cadre ne bouge pas -->
+  <div class="elevator-frame">
+    <div class="elevator-viewport">
+
+      <!-- SECTION 01 — HERO -->
+      <section class="section hero" data-chapter="01">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— CO-ACQUÉREURS</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">01</div>
+          <h1>Sortir de la dette à 25 ans,<br>devenir propriétaire à trois.</h1>
+          <p class="hero__tagline">Deux à trois familles, un terrain, chacun son titre de propriété. Le coût ? ~80 000 € par foyer.</p>
+          <p style="margin-top: 1.5rem;">
+            <a href="#action" class="btn btn--yellow btn--cta">Rejoindre le tour de table</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- SECTION 02 — CONSTAT -->
+      <section class="section section--red" data-chapter="02">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— LE CONSTAT</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">02</div>
+          <div class="grid grid--2">
+            <div>
+              <h2>Le piège du logement à La Réunion</h2>
+              <p>De Saint-Denis à Saint-Pierre, de la Possession à Sainte-Rose : un terrain constructible coûte entre 80 et 150 €/m². Une case clé en main dépasse les 220 000 €. Pour une famille modeste — et elles sont majoritaires sur l'île — cela signifie 25 ans de crédit, quand la banque accepte.</p>
+              <p>Le résultat ? Des marmailles qui grandissent sans espace, des jeunes actifs bloqués en location, des familles qui renoncent au rêve de la kaz. Un département qui se densifie sans loger, où la tradition de la case familiale se perd dans les cages à lapins du promoteur.</p>
+              <div class="quote" style="border-color: var(--yellow); background: rgba(0,0,0,0.15);">
+                <p class="quote__text" style="color: #fff;">Le coût foncier n'est plus une barrière. Il devient une stratégie.</p>
+              </div>
+            </div>
+            <div>
+              <div class="stat-block" style="flex-direction: column;">
+                <div class="stat">
+                  <span class="stat__value" style="color: var(--yellow); text-decoration: line-through;">250 k€</span>
+                  <span class="stat__label" style="color: rgba(255,255,255,0.8);">Prix moyen d'une maison</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__value" style="color: #fff;">~80 k€</span>
+                  <span class="stat__label" style="color: rgba(255,255,255,0.8);">Coût Kalipso par foyer</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__value" style="color: rgba(255,255,255,0.9);">25 ans</span>
+                  <span class="stat__label" style="color: rgba(255,255,255,0.8);">Durée crédit classique</span>
+                </div>
+                <div class="stat">
+                  <span class="stat__value" style="color: var(--yellow);">÷3</span>
+                  <span class="stat__label" style="color: rgba(255,255,255,0.8);">Division du coût foncier</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 03 — LES 4 PILIERS -->
+      <section class="section section--navy" data-chapter="03">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— LES 4 PILIERS</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">03</div>
+          <h2>Un projet bâti sur quatre fondations</h2>
+          <p style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">Chaque pilier répond à une promesse concrète pour votre foyer — et pour l'île entière.</p>
+          <div class="grid grid--4" id="piliers-grid">
+            <div class="pillar-card pillar-card--accessible">
+              <span class="pillar-card__number">01</span>
+              <div class="pillar-card__icon">🏠</div>
+              <h3 class="pillar-card__title">Accessible</h3>
+              <p class="pillar-card__desc">Devenir propriétaire à 3. Trois familles s'unissent, bornent trois parcelles et bâtissent chacune leur kaz. Comme dans la tradition créole — le voisinage choisi.</p>
+            </div>
+            <div class="pillar-card pillar-card--durable">
+              <span class="pillar-card__number">02</span>
+              <div class="pillar-card__icon">🌿</div>
+              <h3 class="pillar-card__title">Durable</h3>
+              <p class="pillar-card__desc">Construit pour vos marmailles et leurs marmailles. Steel framing RTAA DOM, ventilation alizés, toiture isolée contre le soleil des hauts comme des bas.</p>
+            </div>
+            <div class="pillar-card pillar-card--humain">
+              <span class="pillar-card__number">03</span>
+              <div class="pillar-card__icon">🤝</div>
+              <h3 class="pillar-card__title">Humain</h3>
+              <p class="pillar-card__desc">Une porte ouverte. Trois foyers qui partagent un chemin, pas un mur. Le vivre-ensemble réunionnais — la varangue, le jardin, le partage — pas le lotissement anonyme.</p>
+            </div>
+            <div class="pillar-card pillar-card--perenne">
+              <span class="pillar-card__number">04</span>
+              <div class="pillar-card__icon">🔗</div>
+              <h3 class="pillar-card__title">Pérenne</h3>
+              <p class="pillar-card__desc">Patrimoine transmissible. Titre individuel, terrain borné, bien que vous léguez à vos enfants. La kaz familiale retrouvée — un ancrage pour les générations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 04 — INGÉNIERIE FONCIÈRE -->
+      <section class="section section--turquoise" data-chapter="04">
+        <div class="container">
+          <span class="section__tag" style="color: #fff;">— INGÉNIERIE FONCIÈRE</span>
+          <div class="section__number" style="background: var(--ink); color: var(--paper);">04</div>
+          <h2>Un terrain, deux à trois propriétaires</h2>
+          <p style="color: rgba(255,255,255,0.85);">Le principe est celui du bon sens créole : acheter ensemble, borner séparément, titrer individuellement. Comme les familles le faisaient avant que le promoteur ne s'en mêle.</p>
+          <div class="grid grid--2" style="margin-top: 2rem;">
+            <div>
+              <h3>Le mécanisme</h3>
+              <ol style="padding-left: 1.5rem; line-height: 2;">
+                <li><strong>Identification</strong> — repérage d'une parcelle en dent creuse</li>
+                <li><strong>Acquisition groupée</strong> — achat sans intermédiaire promoteur</li>
+                <li><strong>Bornage</strong> — géomètre expert, division en 2 ou 3 lots</li>
+                <li><strong>Titrement</strong> — titres de propriété individuels</li>
+                <li><strong>VRD mutualisé</strong> — voirie et réseaux partagés</li>
+                <li><strong>Construction</strong> — steel framing, assemblage &lt;3 mois</li>
+              </ol>
+            </div>
+            <div>
+              <div class="map-block">
+                <img class="map-satellite" src="../assets/maps/reunion-satellite-sm.jpg" alt="Carte satellite La Réunion" loading="lazy">
+                <div class="map-block__overlay">
+                  <span class="map-pin" style="top: 40%; left: 65%; background: var(--yellow);" data-label="Est"></span>
+                  <span class="map-pin" style="top: 50%; left: 25%; background: var(--turquoise);" data-label="Ouest"></span>
+                  <span class="map-pin" style="top: 70%; left: 45%; background: var(--red);" data-label="Sud"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 05 — RÉSILIENCE TECHNIQUE -->
+      <section class="section section--dark" data-chapter="05">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— RÉSILIENCE TECHNIQUE</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">05</div>
+          <h2 style="color: var(--paper);">Bâtir pour durer sous les tropiques</h2>
+          <p style="color: rgba(244,236,219,0.8);">Le steel framing répond à ce que La Réunion exige : Gamède, Dina, Bejisa — les cyclones passent, la case reste. Séismes du Piton, humidité de l'Est sauvage, chaleur du littoral Ouest — tout est pris en compte.</p>
+          <div class="grid grid--3" style="margin-top: 2rem;">
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--yellow);">Cyclonique</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Structure dimensionnée pour 250 km/h — plus fort que Gamède. Ancrages renforcés au sol.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--turquoise);">Parasismique</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Zone sismique 3. Ossature légère et flexible, dissipation par déformation contrôlée.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--red);">Thermique</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Ventilation alizés traversante, isolation R>6. Zéro climatisation — le confort créole naturel.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--yellow);">Rapidité</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Assemblage sec. Votre case montée en moins de 3 mois, de la dalle au toit.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--turquoise);">RTAA DOM</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Réglementation Thermique, Acoustique et Aération des DOM. Conçu pour le climat tropical.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--red);">Évolutif</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Structure modulaire. La famille s'agrandit ? La case aussi.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 06 — RENDUS VISUELS (avec photos) -->
+      <section class="section section--dark" data-chapter="06" style="background: var(--ink) !important;">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— RENDUS VISUELS</span>
+          <div class="section__number" style="background: var(--red); color: #fff;">06</div>
+          <h2 style="color: var(--paper);">Votre future case</h2>
+          <p style="color: rgba(244,236,219,0.8);">Deux à trois habitations individuelles au cœur de la végétation tropicale. Architecture contemporaine inspirée de la kaz créole : toitures débordantes contre la pluie, varangue généreuse pour vivre dehors, bardage bois qui vieillit dans le paysage. Cliquez sur les photos pour les agrandir.</p>
+          <div class="rendu-grid" style="margin-top: 2rem;">
+            <div class="rendu-card" style="border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.12);">
+              <img src="../assets/img/terrasse.jpg" alt="Vue terrasse — espace de vie extérieur avec table et parasol" onclick="openLightbox(this)" data-caption="La varangue — le salon créole à ciel ouvert">
+              <div class="rendu-card__caption" style="color: var(--paper);">La varangue</div>
+            </div>
+            <div class="rendu-card" style="border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.12);">
+              <img src="../assets/img/facade.jpg" alt="Vue façade — bardage bois, toiture à pans, végétation tropicale" onclick="openLightbox(this)" data-caption="Façade — bardage bois, toiture à pans, intégration tropicale">
+              <div class="rendu-card__caption" style="color: var(--paper);">Façade</div>
+            </div>
+            <div class="rendu-card" style="border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.12);">
+              <img src="../assets/img/interieur.jpg" alt="Vue intérieure — chambre, parquet, lumière naturelle" onclick="openLightbox(this)" data-caption="Intérieur — volumes, lumière naturelle, sobriété contemporaine">
+              <div class="rendu-card__caption" style="color: var(--paper);">Intérieur</div>
+            </div>
+          </div>
+          <div class="quote" style="margin-top: 2rem; border-color: var(--yellow); background: rgba(255,255,255,0.06);">
+            <p class="quote__text" style="color: var(--paper);">Deux à trois toits sous les filaos, un jardin partagé, des familles libres.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 07 — CADRE ÉCONOMIQUE -->
+      <section class="section section--yellow" data-chapter="07">
+        <div class="container">
+          <span class="section__tag" style="color: var(--ink);">— CADRE ÉCONOMIQUE</span>
+          <div class="section__number" style="background: var(--red); color: #fff;">07</div>
+          <div class="flex flex--between" style="flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+            <h2>Ce que ça coûte vraiment</h2>
+            <div class="toggle-wrap">
+              <button class="toggle-btn active" data-mode="nominal">Chiffres</button>
+              <button class="toggle-btn" data-mode="structurel">Structurel</button>
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="stat">
+              <span class="stat__value" style="color: var(--red); text-decoration: line-through;" data-nominal="250 k€" data-structurel="Plafond marché">250 k€</span>
+              <span class="stat__label">Prix marché</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value" style="color: var(--turquoise);" data-nominal="~80 k€" data-structurel="Coût optimisé">~80 k€</span>
+              <span class="stat__label">Coût Kalipso</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value" style="color: var(--yellow);" data-nominal="-68 %" data-structurel="Optimisation directe">-68 %</span>
+              <span class="stat__label">Économie</span>
+            </div>
+          </div>
+          <div class="table-wrap" style="margin-top: 2rem;">
+            <table>
+              <thead><tr><th>Poste</th><th>Montant</th><th>Part</th></tr></thead>
+              <tbody>
+                <tr><td>Terrain mutualisé</td><td data-nominal="~25 000 €" data-structurel="Foncier optimisé">~25 000 €</td><td>31 %</td></tr>
+                <tr><td>VRD mutualisé</td><td data-nominal="~8 000 €" data-structurel="Infrastructure partagée">~8 000 €</td><td>10 %</td></tr>
+                <tr><td>Construction steel framing</td><td data-nominal="~40 000 €" data-structurel="Enveloppe bâtie">~40 000 €</td><td>50 %</td></tr>
+                <tr><td>Frais annexes</td><td data-nominal="~7 000 €" data-structurel="Frais réglementaires">~7 000 €</td><td>9 %</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 style="margin-top: 2rem;">Aides cumulables</h3>
+          <div class="grid grid--3" style="margin-top: 1rem;">
+            <div class="card"><h4>LBU</h4><p class="card__body" data-nominal="Jusqu'à 30 000 €" data-structurel="Aide directe stackable">Jusqu'à 30 000 €</p><small>Ligne Budgétaire Unique DOM</small></div>
+            <div class="card"><h4>PTZ DOM</h4><p class="card__body" data-nominal="Variable selon revenus" data-structurel="Levier de financement">Variable selon revenus</p><small>Prêt à Taux Zéro outre-mer</small></div>
+            <div class="card"><h4>Aide locale</h4><p class="card__body" data-nominal="Variable" data-structurel="Subvention territoriale">Variable</p><small>Commune / Département / Région</small></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 08 — APPEL À L'ACTION -->
+      <section class="section" data-chapter="08" style="background: var(--navy); color: #fff;">
+        <div class="container" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 70vh;">
+          <span class="section__tag" style="color: var(--yellow);">— REJOINDRE</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">08</div>
+          <h2 style="color: #fff;">Vous êtes la prochaine famille.</h2>
+          <p style="color: rgba(255,255,255,0.8); max-width: 50ch; margin: 1rem auto;">Le tour de table est ouvert. Deux à trois foyers, un terrain, chacun propriétaire. Si vous êtes prêts à bâtir autrement, prenez contact.</p>
+          <a href="mailto:sofianehakoury1993@gmail.com?subject=Kalipso%20Trio%20—%20Je%20souhaite%20rejoindre%20le%20tour%20de%20table&body=Bonjour%2C%0A%0AJe%20suis%20int%C3%A9ress%C3%A9(e)%20par%20le%20projet%20Kalipso%20Trio%20en%20tant%20que%20co-acqu%C3%A9reur.%0A%0A"
+             class="btn btn--yellow btn--cta" style="margin-top: 2rem;">
+            Rejoindre le tour de table
+          </a>
+          <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.6;">
+            Sofiane Hakoury Behdad & Florent Clayes · La Réunion — 2026
+          </p>
+        </div>
+      </section>
+
+    </div><!-- /elevator-viewport -->
+  </div><!-- /elevator-frame -->
+
+  <!-- INDICATEURS -->
+  <div class="elevator-indicator"></div>
+
+  <!-- FLÈCHES -->
+  <div class="elevator-arrows">
+    <button class="elevator-arrow" id="arrow-up" disabled>▲</button>
+    <button class="elevator-arrow" id="arrow-down">▼</button>
+  </div>
+
+  <!-- FOOTER (visible uniquement en print) -->
+  <footer class="footer" style="display: none;">
+    <span>Kalipso Trio · Le Badamier · 2026</span>
+    <a href="../index.html">← Retour au hub</a>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+
+  <script src="../scripts/motion.js" defer></script>
+  <script>
+  function openLightbox(img) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-caption').textContent = img.dataset.caption || img.alt;
+    lb.classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>

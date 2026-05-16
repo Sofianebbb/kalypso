@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "nom": "Groupe Ravate",
+    "type": "Groupe privé",
+    "secteur": "Distribution, immobilier, diversifié",
+    "rse": "Engagement RSE local fort, fondation d'entreprise active",
+    "potentiel": "Financement, mécénat, fourniture matériaux à coût négocié",
+    "site": "https://www.ravate.com"
+  },
+  {
+    "id": 2,
+    "nom": "CBo Territoria",
+    "type": "Foncière",
+    "secteur": "Aménagement foncier, promotion immobilière",
+    "rse": "Développement durable intégré, mixité sociale",
+    "potentiel": "Mise à disposition foncière, partenariat aménagement",
+    "site": "https://www.cboterritoria.com"
+  },
+  {
+    "id": 3,
+    "nom": "SEMADER",
+    "type": "SEM",
+    "secteur": "Aménagement urbain, habitat",
+    "rse": "Mission d'intérêt général, habitat durable",
+    "potentiel": "Portage foncier, montage opérationnel, expertise réglementaire",
+    "site": "https://www.semader.com"
+  },
+  {
+    "id": 4,
+    "nom": "SIDR",
+    "type": "Bailleur social",
+    "secteur": "Logement social, gestion locative",
+    "rse": "Accès au logement pour tous, performance énergétique",
+    "potentiel": "Reproductibilité du modèle, intégration PLH, gestion partagée",
+    "site": "https://www.sidr.fr"
+  },
+  {
+    "id": 5,
+    "nom": "EPF Réunion",
+    "type": "Public",
+    "secteur": "Établissement public foncier",
+    "rse": "Lutte contre l'artificialisation, régulation foncière",
+    "potentiel": "Portage foncier longue durée, identification dents creuses",
+    "site": "https://www.epf-reunion.com"
+  },
+  {
+    "id": 6,
+    "nom": "CDC Habitat",
+    "type": "Bailleur social",
+    "secteur": "Habitat social et intermédiaire",
+    "rse": "Transition écologique, innovation habitat",
+    "potentiel": "Co-investissement, garantie institutionnelle, essaimage national",
+    "site": "https://www.cdc-habitat.fr"
+  },
+  {
+    "id": 7,
+    "nom": "Action Logement",
+    "type": "Public",
+    "secteur": "Financement du logement, aide aux salariés",
+    "rse": "Accès propriété, mobilité résidentielle",
+    "potentiel": "Aides directes aux co-acquéreurs, subventions complémentaires",
+    "site": "https://www.actionlogement.fr"
+  },
+  {
+    "id": 8,
+    "nom": "OPALE",
+    "type": "Bailleur social",
+    "secteur": "Logement social Océan Indien",
+    "rse": "Qualité de vie, insertion par le logement",
+    "potentiel": "Partenariat technique, retour d'expérience habitat tropical",
+    "site": "https://www.opale-reunion.fr"
+  },
+  {
+    "id": 9,
+    "nom": "OPTIMUS",
+    "type": "Promoteur",
+    "secteur": "Promotion immobilière, construction",
+    "rse": "Innovation constructive, habitat adapté",
+    "potentiel": "Expertise steel framing, maîtrise d'œuvre, co-développement",
+    "site": "https://www.optimus-reunion.com"
+  },
+  {
+    "id": 10,
+    "nom": "URCOOPA",
+    "type": "Coopérative",
+    "secteur": "Coopérative agricole et agroalimentaire",
+    "rse": "Circuits courts, économie solidaire, ancrage territorial",
+    "potentiel": "Modèle coopératif transposable, réseau terrain, légitimité locale",
+    "site": "https://www.urcoopa.fr"
+  },
+  {
+    "id": 11,
+    "nom": "Groupe CILAM",
+    "type": "Groupe privé",
+    "secteur": "Agroalimentaire, industrie",
+    "rse": "Développement local, emploi, fondation",
+    "potentiel": "Mécénat, ancrage économique, visibilité RSE",
+    "site": "https://www.cilam.fr"
+  },
+  {
+    "id": 12,
+    "nom": "Apavou",
+    "type": "Promoteur",
+    "secteur": "Promotion immobilière, hôtellerie",
+    "rse": "Développement intégré, emploi local",
+    "potentiel": "Co-promotion, réseau foncier, expertise construction locale",
+    "site": "https://www.apavou.com"
+  }
+]

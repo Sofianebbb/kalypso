@@ -1,0 +1,61 @@
+{
+  "marche": {
+    "nominal": "220 000 – 280 000 €",
+    "structurel": "Plafond marché"
+  },
+  "kalipso": {
+    "nominal": "~80 000 €",
+    "structurel": "Coût optimisé"
+  },
+  "total_projet": {
+    "nominal": "~258 000 €",
+    "structurel": "Enveloppe globale mutualisée"
+  },
+  "economie": {
+    "nominal": "60 à 70 % sous marché",
+    "structurel": "Optimisation directe"
+  },
+  "postes": [
+    {
+      "poste": "Terrain (1/3 mutualisé)",
+      "nominal": "~25 000 €",
+      "structurel": "Foncier optimisé",
+      "part": 31
+    },
+    {
+      "poste": "VRD mutualisé",
+      "nominal": "~8 000 €",
+      "structurel": "Infrastructure partagée",
+      "part": 10
+    },
+    {
+      "poste": "Construction steel framing",
+      "nominal": "~40 000 €",
+      "structurel": "Enveloppe bâtie",
+      "part": 50
+    },
+    {
+      "poste": "Frais annexes (géomètre, notaire, raccordements)",
+      "nominal": "~7 000 €",
+      "structurel": "Frais réglementaires",
+      "part": 9
+    }
+  ],
+  "aides": [
+    {
+      "aide": "LBU (Ligne Budgétaire Unique)",
+      "nominal": "Jusqu'à 30 000 €",
+      "structurel": "Aide directe stackable"
+    },
+    {
+      "aide": "PTZ DOM",
+      "nominal": "Variable selon revenus",
+      "structurel": "Levier de financement"
+    },
+    {
+      "aide": "Aide collectivité locale",
+      "nominal": "Variable",
+      "structurel": "Subvention territoriale"
+    }
+  ]
+}

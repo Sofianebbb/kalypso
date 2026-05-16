@@ -1,0 +1,22 @@
+:root {
+  --ink: #0E0E0E;
+  --paper: #F4ECDB;
+  --red: #D2382C;
+  --navy: #1B2A4E;
+  --yellow: #F2C12E;
+  --turquoise: #2BA39A;
+  --pink: #E94B7C;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --border: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+  --shadow-hover: 4px 4px 0 var(--ink);
+
+  --radius: 0;
+  --gap: 1.5rem;
+  --gap-lg: 3rem;
+
+  --section-pad: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 4rem);
+}

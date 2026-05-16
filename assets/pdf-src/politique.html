@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Kalipso Trio — Institutionnels & élus</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4 portrait; margin: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink: #0E0E0E;
+  --paper: #F4ECDB;
+  --red: #D2382C;
+  --navy: #1B2A4E;
+  --yellow: #F2C12E;
+  --turquoise: #2BA39A;
+  --pink: #E94B7C;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+html, body {
+  width: 210mm;
+  font-family: var(--font-body);
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* === PAGE TEMPLATE === */
+.page {
+  width: 210mm;
+  height: 297mm;
+  position: relative;
+  overflow: hidden;
+  page-break-after: always;
+  page-break-inside: avoid;
+  padding: 10mm 13mm 12mm;
+  display: flex;
+  flex-direction: column;
+  font-size: 95%;
+}
+.page:last-child { page-break-after: auto; }
+
+/* === HEADER === */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 2.5px solid var(--ink);
+  font-family: var(--font-body);
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* === FOOTER === */
+.page-footer {
+  position: absolute;
+  bottom: 10mm;
+  left: 15mm;
+  right: 15mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1.5px solid var(--ink);
+  font-size: 6.5pt;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+}
+.page-footer span:first-child::before {
+  content: "\25D0";
+  margin-right: 6px;
+}
+
+/* === CONTENT AREA === */
+.page-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6mm 0 12mm;
+}
+
+/* === SECTION TAG === */
+.section-tag {
+  font-family: var(--font-body);
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* === SECTION NUMBER BOX === */
+.section-box {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px 18px;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  margin-bottom: 14px;
+  min-width: 130px;
+}
+.section-box__num {
+  font-family: var(--font-display);
+  font-size: 28pt;
+  font-weight: 900;
+  line-height: 1;
+}
+.section-box__title {
+  font-family: var(--font-body);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* === PAGE INFO (top right) === */
+.page-info {
+  text-align: right;
+  font-size: 7pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* === HEADINGS === */
+h1 {
+  font-family: var(--font-display);
+  font-size: 36pt;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+h1 em {
+  font-style: italic;
+  color: var(--red);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 28pt;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+h2 em {
+  font-style: italic;
+  color: var(--red);
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: 14pt;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* === BODY TEXT === */
+.lead {
+  font-family: var(--font-display);
+  font-size: 11pt;
+  font-style: italic;
+  line-height: 1.5;
+  border-left: 3.5px solid var(--red);
+  padding-left: 14px;
+  margin: 10px 0 16px;
+  max-width: 85%;
+}
+p { font-size: 9pt; line-height: 1.5; }
+
+/* === GRID === */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.grid-2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-top { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; }
+
+/* === CARDS === */
+.card {
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 14px 16px;
+}
+.card__tag {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.card__title {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.card__body { font-size: 8.5pt; line-height: 1.45; color: #333; }
+
+/* === STAT BLOCKS === */
+.stat-row {
+  display: flex;
+  gap: 12px;
+  margin: 14px 0;
+}
+.stat-card {
+  flex: 1;
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 14px 12px;
+  text-align: center;
+}
+.stat-card--filled {
+  color: #fff;
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 24pt;
+  font-weight: 900;
+  line-height: 1.1;
+}
+.stat-label {
+  font-size: 6.5pt;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+/* === QUOTE === */
+.quote-block {
+  border: 2.5px solid var(--ink);
+  border-left: 5px solid var(--red);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 14px 18px;
+  margin: 14px 0;
+}
+.quote-block p {
+  font-family: var(--font-display);
+  font-size: 11pt;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* === BIG QUOTE === */
+.quote-banner {
+  background: var(--ink);
+  color: var(--yellow);
+  padding: 16px 20px;
+  margin-top: 14px;
+}
+.quote-banner p {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  font-style: italic;
+  color: var(--yellow);
+}
+
+/* === TABLE === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  border: 2.5px solid var(--ink);
+}
+th {
+  background: var(--ink);
+  color: #fff;
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  text-align: left;
+}
+td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #ccc;
+}
+tr:last-child td { border-bottom: none; }
+.row-total {
+  background: var(--red);
+  color: #fff;
+  font-weight: 700;
+}
+.row-total td { border-bottom: none; }
+
+/* === PHOTO GRID === */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+  flex: 1;
+}
+.photo-card {
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  overflow: hidden;
+  position: relative;
+}
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.photo-card--main { grid-row: 1 / 3; }
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(14,14,14,0.85);
+  color: #fff;
+  padding: 6px 10px;
+}
+.photo-caption__tag {
+  font-size: 6pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.photo-caption__text {
+  font-family: var(--font-display);
+  font-size: 8.5pt;
+  font-style: italic;
+  color: var(--yellow);
+}
+
+/* === CTA BANNER === */
+.cta-banner {
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 12px 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+.cta-banner p {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+/* === OL LIST === */
+.step-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.step-list li {
+  font-size: 8.5pt;
+  line-height: 1.5;
+  padding: 5px 0;
+  border-bottom: 1px dashed #ccc;
+  display: flex;
+  gap: 8px;
+}
+.step-list li:last-child { border-bottom: none; }
+.step-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 11pt;
+  color: var(--turquoise);
+  min-width: 20px;
+}
+
+/* === LOGO === */
+.logo-svg { width: 80px; height: 80px; margin: 0 auto 10px; display: block; }
+.logo-large { width: 140px; height: 140px; }
+
+/* === COVER SPECIFIC === */
+.cover-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.cover-title {
+  font-family: var(--font-display);
+  font-size: 48pt;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.cover-subtitle {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.cover-name {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  font-style: italic;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+.cover-ref {
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #777;
+}
+.cover-bottom {
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 18px 24px;
+  text-align: center;
+  margin-top: auto;
+  width: 100%;
+}
+.cover-bottom__tag {
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.cover-bottom__names {
+  font-family: var(--font-display);
+  font-size: 14pt;
+  font-weight: 700;
+}
+.cover-bottom__sub {
+  font-size: 8pt;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* === PAGE 2 HERO === */
+.hero-page {
+  background: var(--red);
+  color: #fff;
+}
+.hero-page .page-header { border-color: rgba(255,255,255,0.3); color: #fff; }
+.hero-page .page-footer { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); }
+.hero-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  position: relative;
+}
+.hero-text { flex: 1; z-index: 1; }
+.hero-text .cover-title { font-size: 56pt; color: #fff; text-align: left; }
+.hero-text .cover-subtitle { color: var(--yellow); }
+.hero-text .cover-name { color: var(--yellow); font-size: 20pt; }
+.hero-logo-wrap {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 240px;
+  opacity: 0.9;
+}
+.hero-banner {
+  background: rgba(0,0,0,0.3);
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+}
+.hero-banner p {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.hero-divider {
+  width: 100%;
+  height: 16px;
+  margin: 16px 0 0;
+}
+.hero-bottom {
+  text-align: center;
+  padding: 10px 0 0;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+
+/* === SECTION COLORED BACKGROUNDS === */
+.page--navy { background: var(--navy); color: #fff; }
+.page--navy .page-header { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
+.page--navy .page-footer { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.5); }
+.page--navy h2 em { color: var(--yellow); }
+.page--navy .lead { border-color: var(--yellow); }
+.page--navy .card { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.15); color: #fff; }
+.page--navy .card__tag { color: var(--yellow); }
+.page--navy .card__body { color: rgba(255,255,255,0.8); }
+
+.page--yellow { background: var(--yellow); }
+.page--yellow .section-box { background: var(--red); color: #fff; }
+.page--yellow .lead { border-color: var(--ink); }
+.page--yellow .stat-card { background: #fff; }
+
+.page--turquoise { background: var(--turquoise); color: #fff; }
+.page--turquoise .page-header { border-color: rgba(255,255,255,0.3); color: #fff; }
+.page--turquoise .page-footer { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6); }
+.page--turquoise h2 em { color: var(--ink); }
+.page--turquoise .section-box { background: var(--pink); }
+
+.page--dark { background: var(--ink); color: #fff; }
+.page--dark .page-header { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+.page--dark .page-footer { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); }
+.page--dark .photo-card { border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.15); }
+
+/* === PHOTO SPREAD PAGE === */
+.photo-spread { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.photo-spread__hero { flex: 1.6; border: 3px solid rgba(255,255,255,0.3); box-shadow: 5px 5px 0 rgba(255,255,255,0.15); overflow: hidden; position: relative; }
+.photo-spread__hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-spread__hero .photo-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(14,14,14,0.85)); padding: 12px 14px 10px; }
+.photo-spread__hero .photo-label__tag { font-size: 6pt; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--yellow); }
+.photo-spread__hero .photo-label__title { font-family: var(--font-display); font-size: 11pt; font-weight: 700; font-style: italic; color: #fff; margin-top: 2px; }
+.photo-spread__row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
+.photo-spread__card { border: 3px solid rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.15); overflow: hidden; position: relative; }
+.photo-spread__card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo-spread__card .photo-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(14,14,14,0.85); padding: 6px 10px; }
+.photo-spread__card .photo-label__tag { font-size: 6pt; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--yellow); }
+.photo-spread__card .photo-label__title { font-family: var(--font-display); font-size: 8.5pt; font-style: italic; color: #fff; }
+
+/* === MAP PLACEHOLDER === */
+.map-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* AIDE CARDS */
+.aide-row { display: flex; gap: 10px; margin-top: 10px; }
+.aide-card {
+  flex: 1;
+  border: 2.5px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 10px 12px;
+}
+.aide-card h4 { font-family: var(--font-display); font-size: 13pt; font-weight: 700; }
+.aide-card p { font-size: 8pt; color: #555; margin-top: 2px; }
+.aide-card small { font-size: 6.5pt; color: #888; }
+</style>
+</head>
+<body>
+
+<!-- ========== PAGE 1 — COVER ========== -->
+<div class="page" style="background: var(--paper);">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="cover-center">
+    <svg class="logo-svg logo-large" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="58" fill="#F4ECDB" stroke="#0E0E0E" stroke-width="3"/>
+      <circle cx="60" cy="60" r="46" fill="none" stroke="#D2382C" stroke-width="10"/>
+      <circle cx="60" cy="60" r="35" fill="none" stroke="#F2C12E" stroke-width="8"/>
+      <circle cx="60" cy="60" r="25" fill="none" stroke="#2BA39A" stroke-width="8"/>
+      <circle cx="60" cy="60" r="16" fill="none" stroke="#1B2A4E" stroke-width="6"/>
+      <circle cx="60" cy="60" r="8" fill="#0E0E0E"/>
+    </svg>
+    <div class="section-tag" style="color: var(--turquoise);">— Institutionnels & élus —</div>
+    <div class="cover-title">KALIPSO TRIO</div>
+    <div class="cover-subtitle">3 cases · 1 vision</div>
+    <div class="cover-name">« Le Badamier »</div>
+    <div class="cover-ref">Dossier politique · Réf. 004 · 2026</div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-bottom__tag">— Porteurs du projet</div>
+    <div class="cover-bottom__names">Sofiane <em>Hakoury Behdad</em> & <em>Florent</em> Clayes</div>
+    <div class="cover-bottom__sub">Initiative privée à vocation de politique publique · Implantation : La Réunion.</div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>01 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 2 — HERO ========== -->
+<div class="page hero-page">
+  <div class="page-header">
+    <span>Projet pilote · La Réunion</span>
+    <span>Institutionnels & élus · Édition 2026</span>
+  </div>
+  <div class="hero-body">
+    <div class="hero-text">
+      <div class="cover-title" style="font-size: 44pt;">Transformer<br>un essai privé<br>en <span style="color:var(--yellow);">politique<br>publique.</span></div>
+      <div class="cover-subtitle" style="color: var(--yellow);">Reproductible · Zéro artificialisation</div>
+      <div class="hero-banner">
+        <p>2-3 habitations · Dents creuses · Essaimage territorial</p>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="240" height="240">
+        <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+        <circle cx="60" cy="60" r="46" fill="none" stroke="#F2C12E" stroke-width="10"/>
+        <circle cx="60" cy="60" r="35" fill="none" stroke="#2BA39A" stroke-width="8"/>
+        <circle cx="60" cy="60" r="25" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="8"/>
+        <circle cx="60" cy="60" r="16" fill="none" stroke="#1B2A4E" stroke-width="6"/>
+        <circle cx="60" cy="60" r="8" fill="#0E0E0E"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-bottom">Un projet pilote calibré pour l'essaimage communal</div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>02 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 3 — LE CONSTAT ========== -->
+<div class="page" style="background: var(--paper);">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 10mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--red); color: #fff;">
+          <span class="section-box__num">02</span>
+          <span class="section-box__title">Le constat</span>
+        </div>
+      </div>
+      <div class="page-info">Page 03 / 09<br>Diagnostic territorial</div>
+    </div>
+    <h2>Un département qui se<br>densifie <em>sans loger.</em></h2>
+    <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; margin-top: 8px;">
+      <div>
+        <p class="lead">La Réunion concentre toutes les tensions foncières d'un territoire insulaire : rareté du sol constructible, pression démographique, coûts majorés par l'insularité. Les dispositifs existants ne couvrent pas le segment intermédiaire.</p>
+        <div class="quote-block" style="margin-top:12px;">
+          <p>« La souveraineté territoriale commence par le toit. »</p>
+        </div>
+      </div>
+      <div>
+        <img src="../img/facade.jpg" alt="Façade Le Badamier" style="width:100%; height:160px; object-fit:cover; border:2.5px solid var(--ink); box-shadow:4px 4px 0 var(--ink);">
+        <div style="background:var(--ink); color:#fff; padding:4px 10px; font-size:6.5pt; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; display:inline-block;">Modèle Le Badamier · Façade</div>
+      </div>
+    </div>
+    <div class="stat-row" style="margin-top:14px;">
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--turquoise);">0</div>
+        <span class="stat-label">Artificialisation nette</span>
+      </div>
+      <div class="stat-card stat-card--filled" style="background: var(--red);">
+        <div class="stat-value">2-3</div>
+        <span class="stat-label" style="color:rgba(255,255,255,0.8);">Foyers propriétaires par opération</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">&lt;3 mois</div>
+        <span class="stat-label">Cycle de livraison</span>
+      </div>
+      <div class="stat-card stat-card--filled" style="background: var(--turquoise);">
+        <div class="stat-value">100 %</div>
+        <span class="stat-label" style="color:rgba(255,255,255,0.8);">Reproductible</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>03 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 4 — LES 4 PILIERS ========== -->
+<div class="page page--navy">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 10mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--navy); color: #fff; border-color: rgba(255,255,255,0.4); box-shadow: 4px 4px 0 rgba(255,255,255,0.2);">
+          <span class="section-box__num">03</span>
+          <span class="section-box__title">Les quatre piliers</span>
+        </div>
+      </div>
+      <div class="page-info" style="color:rgba(255,255,255,0.6);">Page 04 / 09<br>Politique publique</div>
+    </div>
+    <h2>Quatre leviers de<br><em>politique publique.</em></h2>
+    <p class="lead" style="color:rgba(255,255,255,0.85); border-color:var(--yellow);">Chaque pilier répond à un objectif territorial mesurable. Intégrable dans les PLH, déployable à l'échelle intercommunale.</p>
+    <div class="grid-2x2" style="margin-top: 8px; flex:1;">
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+          <span style="background:var(--turquoise);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14pt;padding:2px 8px;border:2px solid rgba(255,255,255,0.3);">01</span>
+          <span class="card__tag" style="color:var(--yellow);">Accessible</span>
+        </div>
+        <hr style="border:none;border-top:1.5px dashed rgba(255,255,255,0.2);margin-bottom:6px;">
+        <div class="card__title" style="color:#fff;">Anti-spéculation foncière.</div>
+        <p class="card__body">Propriété accessible sans subvention massive. Le prix du marché divisé par deux grâce à la mutualisation.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+          <span style="background:var(--navy);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14pt;padding:2px 8px;border:2px solid rgba(255,255,255,0.3);">02</span>
+          <span class="card__tag" style="color:var(--yellow);">Durable</span>
+        </div>
+        <hr style="border:none;border-top:1.5px dashed rgba(255,255,255,0.2);margin-bottom:6px;">
+        <div class="card__title" style="color:#fff;">Résilience tropicale.</div>
+        <p class="card__body">Un standard constructif qui devrait devenir la norme. RTAA DOM, cyclonique, parasismique.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+          <span style="background:var(--red);color:#fff;font-family:var(--font-display);font-weight:900;font-size:14pt;padding:2px 8px;border:2px solid rgba(255,255,255,0.3);">03</span>
+          <span class="card__tag" style="color:var(--yellow);">Humain</span>
+        </div>
+        <hr style="border:none;border-top:1.5px dashed rgba(255,255,255,0.2);margin-bottom:6px;">
+        <div class="card__title" style="color:#fff;">Densification humaine.</div>
+        <p class="card__body">Lutte contre l'isolement et l'atomisation sociale. Habitat groupé sans copropriété.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+          <span style="background:var(--yellow);color:var(--ink);font-family:var(--font-display);font-weight:900;font-size:14pt;padding:2px 8px;border:2px solid rgba(255,255,255,0.3);">04</span>
+          <span class="card__tag" style="color:var(--yellow);">Pérenne</span>
+        </div>
+        <hr style="border:none;border-top:1.5px dashed rgba(255,255,255,0.2);margin-bottom:6px;">
+        <div class="card__title" style="color:#fff;">Politique publique en germe.</div>
+        <p class="card__body">Intégrable dans les PLH, déployable commune par commune. Un pilote qui devient un programme.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>04 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 5 — INGÉNIERIE FONCIÈRE ========== -->
+<div class="page" style="background: var(--paper);">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 10mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--turquoise); color: #fff;">
+          <span class="section-box__num">04</span>
+          <span class="section-box__title">Ingénierie foncière</span>
+        </div>
+      </div>
+      <div class="page-info">Page 05 / 09<br>Stratégie foncière</div>
+    </div>
+    <h2>Densifier sans<br><em>artificialiser.</em></h2>
+    <p class="lead">Le modèle cible exclusivement les dents creuses — parcelles sous-exploitées en zone déjà urbanisée. Zéro artificialisation nette, densification douce sur l'existant.</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:10px;">
+      <div>
+        <ol class="step-list">
+          <li><span class="step-num">01</span> <span><strong>Identification</strong> — dents creuses via EPF / SEM / collectivité</span></li>
+          <li><span class="step-num">02</span> <span><strong>Validation urbanistique</strong> — conformité PLU</span></li>
+          <li><span class="step-num">03</span> <span><strong>Acquisition directe</strong> — suppression de l'intermédiation</span></li>
+          <li><span class="step-num">04</span> <span><strong>Bornage & titrement</strong> — 2-3 propriétés distinctes</span></li>
+          <li><span class="step-num">05</span> <span><strong>Mutualisation VRD</strong> — coût divisé par le nombre de foyers</span></li>
+          <li><span class="step-num">06</span> <span><strong>Construction certifiée</strong> — steel framing RTAA DOM</span></li>
+        </ol>
+      </div>
+      <div>
+        <img src="../img/terrasse.jpg" alt="Terrasse Le Badamier" style="width:100%; height:200px; object-fit:cover; border:2.5px solid var(--ink); box-shadow:4px 4px 0 var(--ink);">
+        <div style="background:var(--ink); color:#fff; padding:4px 10px; font-size:6.5pt; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; display:inline-block; margin-top:4px;">Projection · Dent creuse urbaine</div>
+      </div>
+    </div>
+    <div class="quote-banner" style="background:var(--turquoise); margin-top:12px;">
+      <p style="color:#fff;">« Le foncier est un bien commun. Sa gestion doit redevenir un acte de souveraineté territoriale. »</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>05 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 6 — RÉSILIENCE TECHNIQUE ========== -->
+<div class="page page--dark">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 10mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--ink); color: #fff; border-color: rgba(255,255,255,0.4); box-shadow: 4px 4px 0 rgba(255,255,255,0.2);">
+          <span class="section-box__num">05</span>
+          <span class="section-box__title">Résilience technique</span>
+        </div>
+      </div>
+      <div class="page-info" style="color:rgba(255,255,255,0.6);">Page 06 / 09<br>Standard constructif</div>
+    </div>
+    <h2 style="color:#fff;">Un standard constructif<br><em style="color:var(--yellow);">pour le territoire.</em></h2>
+    <p class="lead" style="color:rgba(255,255,255,0.85); border-color:var(--yellow);">Industrialisable, documenté, certifié. Compatible avec les calendriers budgétaires et les exigences de passage à l'échelle.</p>
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap:10px; margin-top:8px; flex:1;">
+      <div class="photo-card" style="border-color:rgba(255,255,255,0.3); box-shadow:4px 4px 0 rgba(255,255,255,0.15); padding:14px 16px;">
+        <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--yellow); margin-bottom:6px;">— Cyclonique</div>
+        <h3 style="color:#fff;">250 km/h</h3>
+        <p style="font-size:8.5pt; color:rgba(255,255,255,0.8);">Le territoire mérite des constructions qui tiennent.</p>
+      </div>
+      <div class="photo-card" style="border-color:rgba(255,255,255,0.3); box-shadow:4px 4px 0 rgba(255,255,255,0.15); padding:14px 16px;">
+        <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--yellow); margin-bottom:6px;">— Parasismique</div>
+        <h3 style="color:#fff;">Zone 3</h3>
+        <p style="font-size:8.5pt; color:rgba(255,255,255,0.8);">Ossature légère, normes les plus exigeantes.</p>
+      </div>
+      <div class="photo-card" style="grid-row: 1 / 3; grid-column: 3; border-color:rgba(255,255,255,0.3); box-shadow:4px 4px 0 rgba(255,255,255,0.15); overflow:hidden;">
+        <img src="../img/interieur.jpg" alt="Intérieur" style="width:100%;height:100%;object-fit:cover;border-radius:0;">
+      </div>
+      <div class="photo-card" style="border-color:rgba(255,255,255,0.3); box-shadow:4px 4px 0 rgba(255,255,255,0.15); padding:14px 16px;">
+        <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--yellow); margin-bottom:6px;">— Thermique passif</div>
+        <h3 style="color:#fff;">Ventilation naturelle</h3>
+        <p style="font-size:8.5pt; color:rgba(255,255,255,0.8);">Zéro climatisation. Réduction facture ménages.</p>
+      </div>
+      <div class="photo-card" style="border-color:rgba(255,255,255,0.3); box-shadow:4px 4px 0 rgba(255,255,255,0.15); padding:14px 16px;">
+        <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--yellow); margin-bottom:6px;">— Industrialisable</div>
+        <h3 style="color:#fff;">Passage à l'échelle</h3>
+        <p style="font-size:8.5pt; color:rgba(255,255,255,0.8);">Standardisé et documenté. RTAA DOM intégrée.</p>
+      </div>
+    </div>
+    <div class="cta-banner" style="background:var(--yellow); border-color:var(--ink);">
+      <p style="color:var(--ink);">Cycle de livraison : moins de 3 mois</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>06 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 7 — RENDUS VISUELS ========== -->
+<div class="page page--dark">
+  <div class="page-header">
+    <span>Dossier · Collectivités & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 6mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--red); color: #fff; border-color: rgba(255,255,255,0.4); box-shadow: 4px 4px 0 rgba(255,255,255,0.2);">
+          <span class="section-box__num">—</span>
+          <span class="section-box__title">Rendus visuels</span>
+        </div>
+      </div>
+      <div class="page-info" style="color:rgba(255,255,255,0.6);">Page 07 / 09<br>Projections</div>
+    </div>
+    <h2 style="color:#fff; margin-bottom:4px;">Projection territoriale —<br><em style="color:var(--yellow);">2 à 3 kaz groupées.</em></h2>
+    <div class="photo-spread">
+      <div class="photo-spread__hero">
+        <img src="../img/facade.jpg" alt="Vue d'ensemble — façade, bardage bois, intégration tropicale">
+        <div class="photo-label">
+          <div class="photo-label__tag">— Vue d'ensemble</div>
+          <div class="photo-label__title">Façade — bardage bois, toiture à pans, intégration tropicale</div>
+        </div>
+      </div>
+      <div class="photo-spread__row">
+        <div class="photo-spread__card">
+          <img src="../img/terrasse.jpg" alt="La varangue — espace de vie extérieur">
+          <div class="photo-label">
+            <div class="photo-label__tag">— La varangue</div>
+            <div class="photo-label__title">Le salon créole à ciel ouvert</div>
+          </div>
+        </div>
+        <div class="photo-spread__card">
+          <img src="../img/interieur.jpg" alt="Intérieur — volumes et lumière naturelle">
+          <div class="photo-label">
+            <div class="photo-label__tag">— Intérieur</div>
+            <div class="photo-label__title">Volumes, lumière naturelle, sobriété</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>07 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 8 — CADRE ÉCONOMIQUE ========== -->
+<div class="page page--yellow">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 10mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--red); color: #fff;">
+          <span class="section-box__num">07</span>
+          <span class="section-box__title">Levier économique</span>
+        </div>
+      </div>
+      <div class="page-info">Page 08 / 09<br>Cadre budgétaire</div>
+    </div>
+    <h2>Levier économique<br><em>territorial.</em></h2>
+    <p class="lead" style="border-color:var(--ink);">Un dispositif qui optimise les deniers publics. Aucune subvention structurelle requise — les aides existantes (LBU, PTZ DOM) suffisent à boucler le montage.</p>
+    <div class="stat-row">
+      <div class="stat-card" style="background:#fff;">
+        <div class="card__tag">Par foyer-bénéficiaire</div>
+        <div class="stat-value" style="font-size:28pt; color:var(--turquoise);">~80 k€</div>
+        <p style="font-size:7.5pt; margin-top:4px; color:#555;">Coût optimisé par mutualisation.<br>Versus plafond marché : -68 %</p>
+      </div>
+      <div class="stat-card stat-card--filled" style="background:var(--red);">
+        <div class="card__tag" style="color:rgba(255,255,255,0.8);">Aides stackables</div>
+        <div class="stat-value" style="font-size:22pt;">LBU + PTZ</div>
+        <p style="font-size:7.5pt; margin-top:4px; color:rgba(255,255,255,0.85);">Dispositifs cumulables.<br>Aucune aide exceptionnelle requise.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:8px; padding:12px 14px; background:#fff;">
+      <div class="card__tag">— Décomposition budgétaire</div>
+      <table style="margin-top:6px;">
+        <thead><tr><th>Composante</th><th>Par unité (estimation)</th><th>Caractérisation</th></tr></thead>
+        <tbody>
+          <tr><td>Foncier</td><td style="text-align:right;">~25 000 €</td><td>Foncier optimisé par mutualisation</td></tr>
+          <tr><td>Infrastructure (VRD)</td><td style="text-align:right;">~8 000 €</td><td>VRD partagé, coût divisé</td></tr>
+          <tr><td>Construction</td><td style="text-align:right;">~40 000 €</td><td>Enveloppe bâtie sous plafond</td></tr>
+          <tr><td>Financement</td><td style="text-align:right;">—</td><td>LBU + PTZ DOM + aide locale</td></tr>
+          <tr class="row-total"><td><strong>Total estimé</strong></td><td style="text-align:right;"><strong>~80 000 €</strong></td><td><strong>Levier stackable</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="quote-banner" style="margin-top:10px;">
+      <p>« Un département où la jeunesse ne peut pas se loger est un département qui se vide. »</p>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>08 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+<!-- ========== PAGE 9 — CONCLUSION & RENCONTRE ========== -->
+<div class="page page--turquoise">
+  <div class="page-header">
+    <span>Dossier · Institutionnels & élus</span>
+    <span>La Réunion · Édition 2026</span>
+  </div>
+  <div class="page-body" style="justify-content: flex-start; padding-top: 10mm;">
+    <div class="grid-top">
+      <div>
+        <div class="section-box" style="background: var(--pink); color: #fff; border-color: rgba(255,255,255,0.5); box-shadow: 4px 4px 0 rgba(255,255,255,0.2);">
+          <span class="section-box__num">10</span>
+          <span class="section-box__title">Rencontre</span>
+        </div>
+      </div>
+      <div class="page-info" style="color:rgba(255,255,255,0.7);">Page 09 / 09<br>Conclusion</div>
+    </div>
+    <h2 style="color:#fff;">Faisons de cet essai privé<br><em style="color:var(--ink);">une politique publique.</em></h2>
+    <div class="card" style="background:rgba(255,255,255,0.92); color:var(--ink); margin-top:10px; padding:18px 20px; border-color:var(--ink); box-shadow:5px 5px 0 rgba(0,0,0,0.3);">
+      <p style="font-family:var(--font-display); font-size:11pt; font-weight:700; font-style:italic; margin-bottom:8px;">Le dossier technique complet est prêt.</p>
+      <p style="font-size:9pt; line-height:1.6;">Nous sommes disponibles pour une présentation institutionnelle. Ce pilote est conçu pour être observé, documenté et reproduit. Si les résultats tiennent — et ils tiendront — il devient un programme déployable commune par commune.</p>
+      <p style="font-size:9pt; line-height:1.6; margin-top:8px;">Un dispositif privé d'accession par mutualisation foncière. 2-3 titres individuels, zéro artificialisation, densification douce. Intégrable dans la révision des PLH 2027.</p>
+    </div>
+    <div style="margin-top:auto; margin-bottom: 16px;">
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:0; border:2.5px solid var(--ink); box-shadow:4px 4px 0 rgba(0,0,0,0.3); overflow:hidden;">
+        <div style="background:var(--ink); color:#fff; padding:12px 16px; display:flex; align-items:center;">
+          <div>
+            <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase;">Rencontre<br>institutionnelle</div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.92); padding:12px 16px; color:var(--ink);">
+          <p style="font-family:var(--font-display); font-size:10pt; font-style:italic;">Disponibles immédiatement pour une présentation en collectivité ou en visioconférence.</p>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;">
+        <div>
+          <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:4px;">— Porteur 01</div>
+          <div style="font-family:var(--font-display); font-size:13pt; font-weight:700; color:#fff;">Sofiane <em style="color:var(--ink);">Hakoury Behdad</em></div>
+          <p style="font-size:8.5pt; color:rgba(255,255,255,0.85); margin-top:4px;">+33 7 81 14 23 23<br>sofianehakoury1993@gmail.com</p>
+        </div>
+        <div>
+          <div style="font-size:7pt; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:4px;">— Porteur 02</div>
+          <div style="font-family:var(--font-display); font-size:13pt; font-weight:700; color:#fff;">Florent <em style="color:var(--ink);">Clayes</em></div>
+          <p style="font-size:8.5pt; color:rgba(255,255,255,0.85); margin-top:4px;">+33 6 77 45 38 71</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>À imprimer en noir & blanc · recto-verso</span>
+    <span>09 / 09 · Kalipso Trio</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalipso Trio — Collectivités & élus</title>
+  <meta name="description" content="Transformer un essai privé en politique publique reproductible. Kalipso Trio, La Réunion 2026.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/motion.css">
+  <link rel="stylesheet" href="../styles/print.css">
+</head>
+<body data-cible="politique" data-mode="structurel">
+
+  <header class="header">
+    <a href="../index.html" class="header__logo">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="42" height="42"><circle cx="60" cy="60" r="58" fill="#F4ECDB" stroke="#0E0E0E" stroke-width="3"/><g class="logo-rings"><circle cx="60" cy="60" r="46" fill="none" stroke="#1B2A4E" stroke-width="10"/><circle cx="60" cy="60" r="35" fill="none" stroke="#2BA39A" stroke-width="8"/><circle cx="60" cy="60" r="25" fill="none" stroke="#F2C12E" stroke-width="8"/><circle cx="60" cy="60" r="16" fill="none" stroke="#D2382C" stroke-width="6"/></g><circle cx="60" cy="60" r="8" fill="#0E0E0E"/></svg>
+      <span class="header__title">Kalipso Trio</span>
+    </a>
+    <nav class="header__nav">
+      <button class="btn btn-readmode" id="toggle-motion">Mode lecture</button>
+      <a class="btn btn-export" href="../assets/pdf/KalipsoTrio_politique.pdf" download style="position:static;box-shadow:var(--shadow);text-decoration:none;">PDF ↓</a>
+      <button class="burger" id="burger"><span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span></button>
+    </nav>
+  </header>
+
+  <div class="nav-panel__backdrop" id="nav-backdrop"></div>
+  <nav class="nav-panel" id="nav-panel">
+    <p class="nav-panel__title">Sections</p>
+    <a href="#" class="nav-panel__item active"><span class="nav-panel__num">01</span><span class="nav-panel__label">Accroche</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">02</span><span class="nav-panel__label">Le constat</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">03</span><span class="nav-panel__label">Les 4 piliers</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">04</span><span class="nav-panel__label">Ingénierie foncière</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">05</span><span class="nav-panel__label">Résilience technique</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">06</span><span class="nav-panel__label">Rendus visuels</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">07</span><span class="nav-panel__label">Cadre économique</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">08</span><span class="nav-panel__label">Acteurs stratégiques</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">09</span><span class="nav-panel__label">QQOPQ</span></a>
+    <a href="#" class="nav-panel__item"><span class="nav-panel__num">10</span><span class="nav-panel__label">Rencontre</span></a>
+  </nav>
+
+  <div class="elevator-frame">
+    <div class="elevator-viewport">
+
+      <!-- 01 HERO -->
+      <section class="section hero" data-chapter="01">
+        <div class="container">
+          <span class="section__tag" style="color: var(--turquoise);">— COLLECTIVITÉS & ÉLUS</span>
+          <div class="section__number" style="background: var(--turquoise); color: #fff;">01</div>
+          <h1>Transformer un essai privé<br>en politique publique reproductible.</h1>
+          <p class="hero__tagline">Un projet pilote qui propose une réponse structurelle à la crise du logement réunionnais. Deux à trois habitations, zéro artificialisation, un modèle calibré pour l'essaimage.</p>
+          <p style="margin-top:1.5rem;"><a href="#" class="btn btn--turquoise btn--cta">Programmer une rencontre institutionnelle</a></p>
+        </div>
+      </section>
+
+      <!-- 02 CONSTAT -->
+      <section class="section section--red" data-chapter="02">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">�� LE CONSTAT</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">02</div>
+          <div class="grid grid--2">
+            <div>
+              <h2>Un département qui se densifie sans loger</h2>
+              <p>De Saint-Denis à Saint-Pierre, des cirques aux Bas du littoral : La Réunion concentre toutes les tensions foncières d'un territoire insulaire — rareté du sol constructible, pression démographique, coûts majorés par l'insularité.</p>
+              <p>Les dispositifs existants ne couvrent pas le segment intermédiaire. Des milliers de familles réunionnaises restent dans l'angle mort — trop « riches » pour le LLS, trop modestes pour le promoteur. Les marmailles grandissent sans kaz.</p>
+              <div class="quote" style="border-color: var(--yellow); background: rgba(0,0,0,0.15);"><p class="quote__text" style="color: #fff;">La souveraineté territoriale commence par le toit.</p></div>
+            </div>
+            <div>
+              <div class="stat-block" style="flex-direction:column;">
+                <div class="stat"><span class="stat__value" style="color: var(--yellow);">0</span><span class="stat__label" style="color: rgba(255,255,255,0.8);">Artificialisation nette</span></div>
+                <div class="stat"><span class="stat__value" style="color: #fff;">2-3</span><span class="stat__label" style="color: rgba(255,255,255,0.8);">Foyers propriétaires par opération</span></div>
+                <div class="stat"><span class="stat__value" style="color: rgba(255,255,255,0.9);">&lt;3 mois</span><span class="stat__label" style="color: rgba(255,255,255,0.8);">Cycle de livraison</span></div>
+                <div class="stat"><span class="stat__value" style="color: var(--yellow);">100 %</span><span class="stat__label" style="color: rgba(255,255,255,0.8);">Reproductible</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03 PILIERS -->
+      <section class="section section--navy" data-chapter="03">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— LES 4 PILIERS</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">03</div>
+          <h2>Quatre leviers de politique publique</h2>
+          <p style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">Chaque pilier répond à un enjeu structurel du territoire — et s'intègre dans les PLH communaux.</p>
+          <div class="grid grid--4" style="margin-top:2rem;">
+            <div class="pillar-card pillar-card--accessible"><span class="pillar-card__number">01</span><div class="pillar-card__icon">🏠</div><h3 class="pillar-card__title">Accessible</h3><p class="pillar-card__desc">Anti-spéculation foncière. La kaz à portée des familles modestes, sans subvention massive.</p></div>
+            <div class="pillar-card pillar-card--durable"><span class="pillar-card__number">02</span><div class="pillar-card__icon">🌿</div><h3 class="pillar-card__title">Durable</h3><p class="pillar-card__desc">Résilience tropicale — alizés, cyclones, séismes du Piton. Un standard qui devrait devenir la norme.</p></div>
+            <div class="pillar-card pillar-card--humain"><span class="pillar-card__number">03</span><div class="pillar-card__icon">🤝</div><h3 class="pillar-card__title">Humain</h3><p class="pillar-card__desc">Le vivre-ensemble créole — la varangue, le jardin partagé — contre l'atomisation sociale des lotissements.</p></div>
+            <div class="pillar-card pillar-card--perenne"><span class="pillar-card__number">04</span><div class="pillar-card__icon">🔗</div><h3 class="pillar-card__title">Pérenne</h3><p class="pillar-card__desc">Politique publique en germe. Intégrable dans les PLH, déployable à l'échelle intercommunale.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04 FONCIER -->
+      <section class="section section--turquoise" data-chapter="04">
+        <div class="container">
+          <span class="section__tag" style="color: #fff;">— INGÉNIERIE FONCIÈRE</span>
+          <div class="section__number" style="background: var(--ink); color: var(--paper);">04</div>
+          <h2>Densifier sans artificialiser</h2>
+          <p style="color: rgba(255,255,255,0.85);">Le modèle cible exclusivement les dents creuses — de la ravine Patates-à-Durand à Saint-Denis jusqu'aux parcelles en friche de l'Entre-Deux. Parcelles sous-exploitées en zone déjà urbanisée, conformes au PLU.</p>
+          <div class="grid grid--2" style="margin-top:2rem;">
+            <div>
+              <ol style="padding-left:1.5rem;line-height:2;">
+                <li><strong>Identification</strong> — dents creuses via EPF / SEM / collectivité</li>
+                <li><strong>Validation urbanistique</strong> — conformité PLU</li>
+                <li><strong>Acquisition directe</strong> — suppression de l'intermédiation</li>
+                <li><strong>Bornage & titrement</strong> — 2-3 propriétés distinctes</li>
+                <li><strong>Mutualisation VRD</strong> — coût divisé</li>
+                <li><strong>Construction certifiée</strong> — steel framing RTAA DOM</li>
+              </ol>
+            </div>
+            <div>
+              <div class="map-block">
+                <img class="map-satellite" src="../assets/maps/reunion-satellite-sm.jpg" alt="Carte satellite La Réunion" loading="lazy">
+                <img class="map-fallback" src="../assets/maps/reunion-overview.jpg" alt="Carte La Réunion">
+                <div class="map-block__overlay">
+                  <span class="map-pin" style="top:45%;left:40%;background:var(--yellow);" data-label="Saint-Paul"></span>
+                  <span class="map-pin" style="top:60%;left:35%;background:var(--turquoise);" data-label="Saint-Leu"></span>
+                  <span class="map-pin" style="top:30%;left:50%;background:var(--red);" data-label="Le Port"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 RÉSILIENCE -->
+      <section class="section section--dark" data-chapter="05">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— RÉSILIENCE TECHNIQUE</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">05</div>
+          <h2 style="color: var(--paper);">Un standard constructif pour le territoire</h2>
+          <p style="color: rgba(244,236,219,0.8);">Gamède, Dina, Bejisa — les cyclones passent, la kaz reste. Séismes du Piton, humidité de l'Est sauvage, chaleur du littoral Ouest — tout est pris en compte.</p>
+          <div class="grid grid--3" style="margin-top:2rem;">
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--yellow);">Cyclonique</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">250 km/h — plus fort que Gamède. Le territoire mérite des constructions qui tiennent.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--turquoise);">Parasismique</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Zone sismique 3. Ossature légère et flexible, dissipation par déformation contrôlée.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--red);">Thermique passif</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Ventilation alizés traversante, zéro climatisation. Confort des Bas aux Hauts.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--yellow);">Cycle court</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">&lt;3 mois. Kaz livrée avant la saison cyclonique. Compatible calendriers budgétaires.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--turquoise);">RTAA DOM</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Conformité intégrée dès la conception. Normes tropicales les plus exigeantes.</p></div>
+            <div class="card" style="background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.2); box-shadow:4px 4px 0 rgba(255,255,255,0.1);"><h4 style="color:var(--red);">Industrialisable</h4><p class="card__body" style="color:rgba(255,255,255,0.8);">Standardisé et documenté. Passage à l'échelle intercommunale.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 RENDUS -->
+      <section class="section section--dark" data-chapter="06" style="background: var(--ink) !important;">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— RENDUS VISUELS</span>
+          <div class="section__number" style="background: var(--red); color: #fff;">06</div>
+          <h2 style="color: var(--paper);">Projection territoriale — 2 à 3 kaz groupées</h2>
+          <p style="color: rgba(244,236,219,0.8);">Architecture contemporaine inspirée de la kaz créole : toitures débordantes contre la pluie cyclonique, varangue généreuse pour vivre dehors, bardage bois qui vieillit dans le paysage tropical. Cliquez pour agrandir.</p>
+          <div class="rendu-grid" style="margin-top:2rem;">
+            <div class="rendu-card" style="border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.12);">
+              <img src="../assets/img/terrasse.jpg" alt="Vue varangue — espace de vie extérieur" onclick="openLightbox(this)" data-caption="La varangue — le salon créole à ciel ouvert, entre alizés et filaos">
+              <div class="rendu-card__caption" style="color: var(--paper);">La varangue</div>
+            </div>
+            <div class="rendu-card" style="border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.12);">
+              <img src="../assets/img/facade.jpg" alt="Vue façade — bardage bois, toiture à pans" onclick="openLightbox(this)" data-caption="Façade — bardage bois, toiture à pans, intégration tropicale">
+              <div class="rendu-card__caption" style="color: var(--paper);">Façade</div>
+            </div>
+            <div class="rendu-card" style="border-color: rgba(255,255,255,0.3); box-shadow: 4px 4px 0 rgba(255,255,255,0.12);">
+              <img src="../assets/img/interieur.jpg" alt="Vue intérieure — lumière naturelle" onclick="openLightbox(this)" data-caption="Intérieur — volumes, lumière naturelle, sobriété contemporaine">
+              <div class="rendu-card__caption" style="color: var(--paper);">Intérieur</div>
+            </div>
+          </div>
+          <div class="quote" style="margin-top: 2rem; border-color: var(--yellow); background: rgba(255,255,255,0.06);">
+            <p class="quote__text" style="color: var(--paper);">Deux à trois toits sous les filaos, un jardin partagé, des familles libres.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 07 ÉCONOMIE (NON-NOMINAL par défaut) -->
+      <section class="section section--yellow" data-chapter="07">
+        <div class="container">
+          <span class="section__tag" style="color: var(--ink);">— CADRE ÉCONOMIQUE</span>
+          <div class="section__number" style="background: var(--red); color: #fff;">07</div>
+          <div class="flex flex--between" style="flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+            <h2>Levier économique territorial</h2>
+            <div class="toggle-wrap">
+              <button class="toggle-btn" data-mode="nominal">Chiffres</button>
+              <button class="toggle-btn active" data-mode="structurel">Structurel</button>
+            </div>
+          </div>
+          <div class="stat-block">
+            <div class="stat"><span class="stat__value" style="color:var(--turquoise);" data-nominal="~80 k€" data-structurel="Coût optimisé">Coût optimisé</span><span class="stat__label">Par foyer-bénéficiaire</span></div>
+            <div class="stat"><span class="stat__value" data-nominal="-68 %" data-structurel="Optimisation directe">Optimisation directe</span><span class="stat__label">Versus plafond marché</span></div>
+            <div class="stat"><span class="stat__value" style="color:var(--yellow);" data-nominal="LBU + PTZ" data-structurel="Aides stackables">Aides stackables</span><span class="stat__label">Dispositifs cumulables</span></div>
+          </div>
+          <div class="table-wrap" style="margin-top:2rem;">
+            <table>
+              <thead><tr><th>Composante</th><th>Caractérisation</th></tr></thead>
+              <tbody>
+                <tr><td>Foncier</td><td data-nominal="~25 000 € / unité" data-structurel="Foncier optimisé par mutualisation">Foncier optimisé par mutualisation</td></tr>
+                <tr><td>Infrastructure</td><td data-nominal="~8 000 € / unité" data-structurel="VRD partagé, coût divisé">VRD partagé, coût divisé</td></tr>
+                <tr><td>Construction</td><td data-nominal="~40 000 € / unité" data-structurel="Enveloppe bâtie sous plafond">Enveloppe bâtie sous plafond</td></tr>
+                <tr><td>Financement</td><td data-nominal="LBU + PTZ DOM + aide locale" data-structurel="Levier de subvention stackable">Levier de subvention stackable</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="quote" style="margin-top:2rem;"><p class="quote__text">Un département où la jeunesse ne peut pas se loger est un département qui se vide.</p></div>
+        </div>
+      </section>
+
+      <!-- 08 ACTEURS -->
+      <section class="section section--navy" data-chapter="08">
+        <div class="container">
+          <span class="section__tag" style="color: var(--yellow);">— ACTEURS STRATÉGIQUES</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">08</div>
+          <h2>Écosystème territorial</h2>
+          <p style="margin-bottom:1.5rem; color: rgba(255,255,255,0.8);">Acteurs publics et privés pour la structuration du dispositif — de Saint-Denis à Saint-Pierre, des cirques au littoral.</p>
+          <div id="acteurs-filters" class="filter-bar"></div>
+          <div id="acteurs-grid" class="grid grid--3"></div>
+        </div>
+      </section>
+
+      <!-- 09 QQOPQ -->
+      <section class="section" data-chapter="09">
+        <div class="container">
+          <span class="section__tag" style="color: var(--turquoise);">— QQOPQ</span>
+          <h2>Cadrage stratégique</h2>
+          <div class="accordion"><div class="accordion__header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">QUOI <span class="accordion__arrow">▼</span></div><div class="accordion__body"><div class="accordion__content">Un dispositif privé d'accession par mutualisation foncière. 2-3 titres individuels, zéro artificialisation, densification douce.</div></div></div>
+          <div class="accordion"><div class="accordion__header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">QUI <span class="accordion__arrow">▼</span></div><div class="accordion__body"><div class="accordion__content">Initiative citoyenne portée par deux entrepreneurs locaux. Ambition : transformer un essai privé en programme public.</div></div></div>
+          <div class="accordion"><div class="accordion__header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">OÙ <span class="accordion__arrow">▼</span></div><div class="accordion__body"><div class="accordion__content">La Réunion, département au foncier le plus tendu de France. Cible : les dents creuses inexploitées.</div></div></div>
+          <div class="accordion"><div class="accordion__header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">QUAND <span class="accordion__arrow">▼</span></div><div class="accordion__body"><div class="accordion__content">Pilote 2026. Résultats intégrables dans la révision des PLH 2027.</div></div></div>
+          <div class="accordion"><div class="accordion__header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">COMMENT <span class="accordion__arrow">▼</span></div><div class="accordion__body"><div class="accordion__content">Suppression de la chaîne d'intermédiation. Achat direct, bornage, titrement individuel. Construction industrialisée RTAA DOM.</div></div></div>
+          <div class="accordion"><div class="accordion__header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">POURQUOI <span class="accordion__arrow">▼</span></div><div class="accordion__body"><div class="accordion__content">La souveraineté territoriale commence par le toit. Un département où la jeunesse ne peut pas se loger est un département qui se vide.</div></div></div>
+        </div>
+      </section>
+
+      <!-- 10 ACTION -->
+      <section class="section" data-chapter="10" style="background: var(--turquoise); color: #fff;">
+        <div class="container" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;">
+          <span class="section__tag" style="color: var(--yellow);">— RENCONTRE</span>
+          <div class="section__number" style="background: var(--yellow); color: var(--ink);">10</div>
+          <h2 style="color:#fff;">Faisons de cet essai privé<br>une politique publique.</h2>
+          <p style="color:rgba(255,255,255,0.85);max-width:55ch;margin:1rem auto;">Nous sommes disponibles pour une présentation institutionnelle. Le dossier technique complet est prêt.</p>
+          <a href="mailto:sofianehakoury1993@gmail.com?subject=Kalipso%20Trio%20—%20Demande%20de%20rencontre%20institutionnelle&body=Bonjour%2C%0A%0ANous%20souhaiterions%20organiser%20une%20rencontre%20autour%20du%20projet%20Kalipso%20Trio.%0A%0ACollectivit%C3%A9%20%3A%20%0A" class="btn btn--yellow btn--cta" style="margin-top:2rem;">Programmer une rencontre institutionnelle</a>
+          <p style="margin-top:2rem;font-size:0.85rem;opacity:0.6;">Sofiane Hakoury Behdad & Florent Clayes · La Réunion — 2026</p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="elevator-indicator"></div>
+  <div class="elevator-arrows">
+    <button class="elevator-arrow" id="arrow-up" disabled>▲</button>
+    <button class="elevator-arrow" id="arrow-down">▼</button>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="../scripts/motion.js" defer></script>
+  <script src="../scripts/data-loader.js" defer></script>
+  <script>
+  function openLightbox(img) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-caption').textContent = img.dataset.caption || img.alt;
+    lb.classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
